@@ -1,9 +1,11 @@
 import os
 import openpyxl
-
+import socket
 class DataReadMaster:
-    # ROOT_DIR = sys.path[1]
-    ROOT_DIR="C:/Users/Neeraj/PycharmProjects/MIMO/"
+    ROOT_DIR = None
+    print(socket.gethostname())
+    if socket.gethostname()=="DESKTOP-KMS7763":
+        ROOT_DIR = "C:/Users/gagandeep.singh_bits/PythonWorkSpace/MIMORepo/"
     newPath = ROOT_DIR.replace(os.sep, '/')
     Path=newPath
     ExcelFileName = "MasterDataFile"

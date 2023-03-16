@@ -1,6 +1,3 @@
-import time
-
-import pytest
 from selenium.webdriver.common.by import By
 from TestEnvironment.GlobalClassMethods.MasterDataExcelReader import DataReadMaster
 from TestEnvironment.GlobalErrorPresent.ErrorPresent import ErrorPresentCls
