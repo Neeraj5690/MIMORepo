@@ -73,7 +73,7 @@ def test_ReportSendSmokeAll():
                 file_attachment.add_header(name, value)
         msg.attach(file_attachment)
 
-    email_from = 'Test Automation Team'
+    email_from = 'Test Automation Team '
     y = DataReadMaster.GlobalData("GlobalData", "EmailTo")
     email_to = ast.literal_eval(y)
     SenderEmail=DataReadMaster.GlobalData("GlobalData", "EmailFrom")
