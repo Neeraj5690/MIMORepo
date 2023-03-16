@@ -6,6 +6,8 @@ class DataReadMaster:
     print(socket.gethostname())
     if socket.gethostname()=="DESKTOP-KMS7763":
         ROOT_DIR = "C:/Users/gagandeep.singh_bits/PythonWorkSpace/MIMORepo/"
+    if socket.gethostname() == "DESKTOP-JLLTS65":
+        ROOT_DIR = "C:/Users/Neeraj/PycharmProjects/MIMO/"
     newPath = ROOT_DIR.replace(os.sep, '/')
     Path=newPath
     ExcelFileName = "MasterDataFile"
