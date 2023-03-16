@@ -1,7 +1,4 @@
 import datetime
-# import sys
-# if "C:/Users/Neeraj/PycharmProjects/MIMO" not in sys.path:
-#     sys.path.append("C:/Users/Neeraj/PycharmProjects/MIMO")
 import openpyxl
 from fpdf import FPDF
 import pytest
@@ -33,7 +30,7 @@ def test_setup():
     FailStatus = "Pass"
     Exe = "Yes"
 
-    path = DataReadMaster.Path + DataReadMaster.GlobalData("test_Smoke_Inspections_Admin", "ParentDirectory") +DataReadMaster.GlobalData("test_Smoke_Inspections_Admin", "Directory") + DataReadMaster.GlobalData("test_Smoke_Inspections_Admin", "SubDirectory")
+    path = DataReadMaster.Path + DataReadMaster.GlobalData("test_Smoke_Inspections_Superint", "ParentDirectory") +DataReadMaster.GlobalData("test_Smoke_Inspections_Superint", "Directory") + DataReadMaster.GlobalData("test_Smoke_Inspections_Superint", "SubDirectory")
     FundNameList = []
     FundNameListAfterRemove = []
 
@@ -47,7 +44,7 @@ def test_setup():
     DollarDate = "$" + DollarDate.date().__str__() + "$"
     d1 = datetime.datetime.strptime(D1, "%Y-%m-%d")
 
-    Exe = DataReadMaster.GlobalData("test_Smoke_Inspections_Admin", "Execution")
+    Exe = DataReadMaster.GlobalData("test_Smoke_Inspections_Superint", "Execution")
 
     # --------Login to the application-----------------------
     if Exe == "Yes":
@@ -55,9 +52,9 @@ def test_setup():
         driver = webdriver.Chrome(executable_path=ChromeCls.NewChromePath1ChrCls)
         driver.implicitly_wait(10)
         driver.maximize_window()
-        driver.get(DataReadMaster.GlobalData("GlobalData", "URL1"))
-        enter_username(DataReadMaster.GlobalData("GlobalData", "AdminUsername"))
-        enter_password(DataReadMaster.GlobalData("GlobalData", "AdminPassword"))
+        driver.get(DataReadMaster.GlobalData("GlobalData", "URLSuperintendent"))
+        enter_username(DataReadMaster.GlobalData("GlobalData", "SuperintendentUsername"))
+        enter_password(DataReadMaster.GlobalData("GlobalData", "SuperintendentPassword"))
         driver.find_element(By.XPATH, DataReadMaster.GlobalData("GlobalData", "LoginSubmit")).click()
 
     yield
@@ -84,9 +81,9 @@ def test_setup():
         pdf.alias_nb_pages()
         pdf.add_page()
         pdf.set_font('Times', '', 12)
-        pdf.cell(0, 10, "Test Case Name:  " + DataReadMaster.GlobalData("test_Smoke_Inspections_Admin", "PDFTestName"), 0, 1)
+        pdf.cell(0, 10, "Test Case Name:  " + DataReadMaster.GlobalData("test_Smoke_Inspections_Superint", "PDFTestName"), 0, 1)
         pdf.multi_cell(0, 10,
-                       "Description:  " + DataReadMaster.GlobalData("test_Smoke_Inspections_Admin", "PDFDescription"), 0, 1)
+                       "Description:  " + DataReadMaster.GlobalData("test_Smoke_Inspections_Superint", "PDFDescription"), 0, 1)
         for i1 in range(len(TestResult)):
             pdf.set_fill_color(255, 255, 255)
             pdf.set_text_color(0, 0, 0)
@@ -97,7 +94,7 @@ def test_setup():
             TestName1 = TestResult[i1].encode('latin-1', 'ignore').decode('latin-1')
             pdf.multi_cell(0, 7, str(i1 + 1) + ")  " + TestName1, 0, 1, fill=True)
             TestFailStatus.append("Pass")
-        pdf.output(DataReadMaster.GlobalData("test_Smoke_Inspections_Admin", "TestName") + "_" + ct + ".pdf")
+        pdf.output(DataReadMaster.GlobalData("test_Smoke_Inspections_Superint", "TestName") + "_" + ct + ".pdf")
 
         # -----------To check if any failed Test case present-------------------
         for io in range(len(TestResult)):
@@ -111,8 +108,8 @@ def test_setup():
         wb = openpyxl.load_workbook(loc)
         sheet = wb.active
         print()
-        check = DataReadMaster.GlobalData("test_Smoke_Inspections_Admin", "TestName")
-        PdfName = DataReadMaster.GlobalData("test_Smoke_Inspections_Admin", "TestName") + "_" + ct + ".pdf"
+        check = DataReadMaster.GlobalData("test_Smoke_Inspections_Superint", "TestName")
+        PdfName = DataReadMaster.GlobalData("test_Smoke_Inspections_Superint", "TestName") + "_" + ct + ".pdf"
         checkcount = 0
 
         for i in range(1, 100):
@@ -120,9 +117,9 @@ def test_setup():
                 if checkcount == 0:
                     sheet.cell(row=i, column=1).value = check
                     sheet.cell(row=i, column=2).value = PdfName
-                    sheet.cell(row=i, column=3).value = DataReadMaster.GlobalData("test_Smoke_Inspections_Admin",
+                    sheet.cell(row=i, column=3).value = DataReadMaster.GlobalData("test_Smoke_Inspections_Superint",
                                                                                   "TestDirectoryName")
-                    sheet.cell(row=i, column=4).value = DataReadMaster.GlobalData("test_Smoke_Inspections_Admin",
+                    sheet.cell(row=i, column=4).value = DataReadMaster.GlobalData("test_Smoke_Inspections_Superint",
                                                                                   "PDFDescription")
                     sheet.cell(row=i, column=5).value = FailStatus
                     checkcount = 1
@@ -132,9 +129,9 @@ def test_setup():
                 if sheet.cell(i, 1).value == check:
                     if checkcount == 0:
                         sheet.cell(row=i, column=2).value = PdfName
-                        sheet.cell(row=i, column=3).value = DataReadMaster.GlobalData("test_Smoke_Inspections_Admin",
+                        sheet.cell(row=i, column=3).value = DataReadMaster.GlobalData("test_Smoke_Inspections_Superint",
                                                                                       "TestDirectoryName")
-                        sheet.cell(row=i, column=4).value = DataReadMaster.GlobalData("test_Smoke_Inspections_Admin",
+                        sheet.cell(row=i, column=4).value = DataReadMaster.GlobalData("test_Smoke_Inspections_Superint",
                                                                                       "PDFDescription")
                         sheet.cell(row=i, column=5).value = FailStatus
                         checkcount = 1
@@ -168,13 +165,11 @@ def test_AllModules(test_setup):
         try:
             # --------------------Checking Page--------------
             LoaderCls.LoaderMeth(driver)
-            PageName = DataReadMaster.GlobalData("test_Smoke_Inspections_Admin", "PageName")
-            driver.find_element(By.XPATH, DataReadMaster.GlobalData("test_Smoke_Inspections_Admin", "RecordsTab")).click()
-            LoaderCls.LoaderMeth(driver)
-            driver.find_element(By.XPATH, DataReadMaster.GlobalData("test_Smoke_Inspections_Admin", "PageLink")).click()
+            PageName = DataReadMaster.GlobalData("test_Smoke_Inspections_Superint", "PageName")
+            driver.find_element(By.XPATH, DataReadMaster.GlobalData("test_Smoke_Inspections_Superint", "PageLink")).click()
             LoaderCls.LoaderMeth(driver)
             try:
-                driver.find_element(By.XPATH,DataReadMaster.GlobalData("test_Smoke_Inspections_Admin", "PageText")).is_displayed()
+                driver.find_element(By.XPATH,DataReadMaster.GlobalData("test_Smoke_Inspections_Superint", "PageText")).is_displayed()
                 TestResult.append(PageName + " module opened successfully")
                 TestResultStatus.append("Pass")
             except Exception as e1:
@@ -184,41 +179,41 @@ def test_AllModules(test_setup):
 
             # -------------------Average Scope Size Count section------------------------------
             ElementVerify = "Average Scope Size Count"
-            PageName = DataReadMaster.GlobalData("test_Smoke_Inspections_Admin", "PageName")
+            PageName = DataReadMaster.GlobalData("test_Smoke_Inspections_Superint", "PageName")
             ElementExpected = "Average Scope Size"
-            MdataSheetTab = "test_Smoke_Inspections_Admin"
+            MdataSheetTab = "test_Smoke_Inspections_Superint"
             MdataSheetItem = "AverageScopeSizeCountSection"
             ElementPresentCls.ElementPresentMeth(driver, MdataSheetTab, MdataSheetItem, ElementExpected, ElementVerify,
                                                  PageName, TestResult, TestResultStatus)
 
             # -------------------Average Scope Cost section------------------------------
             ElementVerify = "Average Scope Cost"
-            PageName = DataReadMaster.GlobalData("test_Smoke_Inspections_Admin", "PageName")
+            PageName = DataReadMaster.GlobalData("test_Smoke_Inspections_Superint", "PageName")
             ElementExpected = "Average Scope Cost"
-            MdataSheetTab = "test_Smoke_Inspections_Admin"
+            MdataSheetTab = "test_Smoke_Inspections_Superint"
             MdataSheetItem = "AverageScopeCost"
             ElementPresentCls.ElementPresentMeth(driver, MdataSheetTab, MdataSheetItem, ElementExpected, ElementVerify,
                                                  PageName, TestResult, TestResultStatus)
 
             # -------------------Avg. Work Orders / Scope section------------------------------
             ElementVerify = "Avg. Work Orders / Scope"
-            PageName = DataReadMaster.GlobalData("test_Smoke_Inspections_Admin", "PageName")
+            PageName = DataReadMaster.GlobalData("test_Smoke_Inspections_Superint", "PageName")
             ElementExpected = "Avg. Work Orders / Scope"
-            MdataSheetTab = "test_Smoke_Inspections_Admin"
+            MdataSheetTab = "test_Smoke_Inspections_Superint"
             MdataSheetItem = "AvgWorkOrders"
             ElementPresentCls.ElementPresentMeth(driver, MdataSheetTab, MdataSheetItem, ElementExpected, ElementVerify,
                                                  PageName, TestResult, TestResultStatus)
 
             # -------------------Inspection Link Text------------------------------
-            MdataSheetTab = "test_Smoke_Inspections_Admin"
+            MdataSheetTab = "test_Smoke_Inspections_Superint"
             MdataSheetItem = "SafeToInspectionLinkText"
             SafeToClick = SafeToElementActionCls.SafeToElementActionMeth(driver, SafeToVerify, MdataSheetTab,
                                                                          MdataSheetItem)
             ElementVerify = "Inspection ID Link Text click"
             if SafeToClick == "Yes":
                 # -------------------Inspection ID Link Text Click------------------------------
-                PageName = DataReadMaster.GlobalData("test_Smoke_Inspections_Admin", "PageName")
-                MdataSheetTab = "test_Smoke_Inspections_Admin"
+                PageName = DataReadMaster.GlobalData("test_Smoke_Inspections_Superint", "PageName")
+                MdataSheetTab = "test_Smoke_Inspections_Superint"
                 MdataSheetItem = "InspectionLink"
                 MdataSheetItem2 = "InspectionLinkText"
                 ElementExpected = "Inspection Date"
@@ -226,15 +221,13 @@ def test_AllModules(test_setup):
                                                    ElementExpected,
                                                    ElementVerify,
                                                    PageName, TestResult, TestResultStatus)
-                driver.find_element(By.XPATH, DataReadMaster.GlobalData("test_Smoke_Inspections_Admin", "RecordsTab")).click()
-                LoaderCls.LoaderMeth(driver)
-                driver.find_element(By.XPATH, DataReadMaster.GlobalData("test_Smoke_Inspections_Admin", "PageLink")).click()
+                driver.find_element(By.XPATH, DataReadMaster.GlobalData("test_Smoke_Inspections_Superint", "PageLink")).click()
                 LoaderCls.LoaderMeth(driver)
 
                 # -------------------Property Link Text Click------------------------------
                 ElementVerify = "Property Link Text click"
-                PageName = DataReadMaster.GlobalData("test_Smoke_Inspections_Admin", "PageName")
-                MdataSheetTab = "test_Smoke_Inspections_Admin"
+                PageName = DataReadMaster.GlobalData("test_Smoke_Inspections_Superint", "PageName")
+                MdataSheetTab = "test_Smoke_Inspections_Superint"
                 MdataSheetItem = "PropertyLink"
                 MdataSheetItem2 = "PropertyLinkText"
                 ElementExpected = "Property Information"
@@ -243,26 +236,11 @@ def test_AllModules(test_setup):
                                                    ElementVerify,
                                                    PageName, TestResult, TestResultStatus)
                 driver.find_element(By.XPATH,
-                                    DataReadMaster.GlobalData("test_Smoke_Inspections_Admin", "RecordsTab")).click()
-                LoaderCls.LoaderMeth(driver)
-                driver.find_element(By.XPATH,
-                                    DataReadMaster.GlobalData("test_Smoke_Inspections_Admin", "PageLink")).click()
+                                    DataReadMaster.GlobalData("test_Smoke_Inspections_Superint", "PageLink")).click()
                 LoaderCls.LoaderMeth(driver)
 
-                # -------------------Superintendent Link Text Click------------------------------
-                ElementVerify = "Superintendent Link Text click"
-                PageName = DataReadMaster.GlobalData("test_Smoke_Inspections_Admin", "PageName")
-                MdataSheetTab = "test_Smoke_Inspections_Admin"
-                MdataSheetItem = "SuperintendentLink"
-                MdataSheetItem2 = "SuperintendentLinkText"
-                ElementExpected = "Superintendent"
-                ElementActionCls.ElementActionMeth(driver, MdataSheetTab, MdataSheetItem, MdataSheetItem2,
-                                                   ElementExpected,
-                                                   ElementVerify,
-                                                   PageName, TestResult, TestResultStatus)
             else:
                 print("No Data available **************** for " + ElementVerify)
-
 
         except Exception as Mainerror:
             print(Mainerror)
@@ -270,7 +248,7 @@ def test_AllModules(test_setup):
             if stringMainerror in "InvalidSessionIdException('invalid session id', None, None)":
                 pass
             else:
-                TestResult.append(stringMainerror + " - "+DataReadMaster.GlobalData("test_Smoke_Inspections_Admin", "PageName")+" section was not able to open by automated script. Execution terminated for all other test cases")
+                TestResult.append(stringMainerror + " - "+DataReadMaster.GlobalData("test_Smoke_Inspections_Superint", "PageName")+" section was not able to open by automated script. Execution terminated for all other test cases")
                 TestResultStatus.append("Fail")
 
     else:
@@ -283,7 +261,7 @@ def test_AllModules(test_setup):
         loc = (path + 'PDFFileNameData/' + ExcelFileName + '.xlsx')
         wb = openpyxl.load_workbook(loc)
         sheet = wb.active
-        check = DataReadMaster.GlobalData("test_Smoke_Inspections_Admin", "TestName")
+        check = DataReadMaster.GlobalData("test_Smoke_Inspections_Superint", "TestName")
 
         for i in range(1, 100):
             if sheet.cell(i, 1).value == check:

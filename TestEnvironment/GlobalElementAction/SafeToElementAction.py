@@ -12,10 +12,13 @@ class SafeToElementActionCls:
             IfElementFound = driver.find_element(By.XPATH,
                                                DataReadMaster.GlobalData(MdataSheetTab,
                                                                          MdataSheetItem)).text
-            if "No items available" == IfElementFound:
+            #print("IfElementFound is "+IfElementFound)
+            if "no" in IfElementFound:
+                #print("Nooooo")
                 SafeToVerify = "No"
                 return SafeToVerify
             else:
+                #print("Yesss")
                 SafeToVerify = "Yes"
                 return SafeToVerify
         except Exception as e1:

@@ -191,69 +191,6 @@ def test_AllModules(test_setup):
                 TestResult.append(PageName + " module was not able to open")
                 TestResultStatus.append("Fail")
 
-            # # --------------------Checking Properties Page--------------
-            # PageName = "Properties"
-            # Ptitle1 = "Properties - PI - Administrator"
-            # driver.find_element(By.XPATH, DataReadMaster.GlobalData("test_Smoke_Home_Admin", "PropertiesPage")).click()
-            # LoaderCls.LoaderMeth(driver)
-            # try:
-            #     PageTitle1 = driver.title
-            #     assert Ptitle1 in PageTitle1, PageName + " module was not able to open "
-            #     TestResult.append(PageName + " module opened successfully")
-            #     TestResultStatus.append("Pass")
-            # except Exception as e1:
-            #     print(e1)
-            #     TestResult.append(PageName + " module was not able to open ")
-            #     TestResultStatus.append("Fail")
-            #
-            # # --------------------Checking Inspections Page--------------
-            # PageName = "Inspections"
-            # Ptitle1 = "Inspections - PI - Administrator"
-            # driver.find_element(By.XPATH,
-            #                     DataReadMaster.GlobalData("test_Smoke_Home_Admin", "InspectionsPage")).click()
-            # LoaderCls.LoaderMeth(driver)
-            # try:
-            #     PageTitle1 = driver.title
-            #     assert Ptitle1 in PageTitle1, PageName + " module was not able to open "
-            #     TestResult.append(PageName + " module opened successfully")
-            #     TestResultStatus.append("Pass")
-            # except Exception as e1:
-            #     print(e1)
-            #     TestResult.append(PageName + " module was not able to open ")
-            #     TestResultStatus.append("Fail")
-            #
-            # # --------------------Checking Inspections Page--------------
-            # PageName = "WorkOrders"
-            # Ptitle1 = "Work Orders - PI - Administrator"
-            # driver.find_element(By.XPATH,
-            #                     DataReadMaster.GlobalData("test_Smoke_Home_Admin", "WorkOrdersPage")).click()
-            # LoaderCls.LoaderMeth(driver)
-            # try:
-            #     PageTitle1 = driver.title
-            #     assert Ptitle1 in PageTitle1, PageName + " module was not able to open "
-            #     TestResult.append(PageName + " module opened successfully")
-            #     TestResultStatus.append("Pass")
-            # except Exception as e1:
-            #     print(e1)
-            #     TestResult.append(PageName + " module was not able to open ")
-            #     TestResultStatus.append("Fail")
-            #
-            # # --------------------Checking Inspections Page--------------
-            # PageName = "Administration"
-            # Ptitle1 = "Administration - PI - Administrator"
-            # driver.find_element(By.XPATH,
-            #                     DataReadMaster.GlobalData("test_Smoke_Home_Admin", "AdministrationPage")).click()
-            # LoaderCls.LoaderMeth(driver)
-            # try:
-            #     PageTitle1 = driver.title
-            #     assert Ptitle1 in PageTitle1, PageName + " module was not able to open "
-            #     TestResult.append(PageName + " module opened successfully")
-            #     TestResultStatus.append("Pass")
-            # except Exception as e1:
-            #     print(e1)
-            #     TestResult.append(PageName + " module was not able to open ")
-            #     TestResultStatus.append("Fail")
-
             # --------------------Checking Inspections Graphs at Home--------------
             # -------------------Inspections New Graph------------------------------
             driver.find_element(By.XPATH,
@@ -266,202 +203,203 @@ def test_AllModules(test_setup):
             ElementPresentCls.ElementPresentMeth(driver, MdataSheetTab, MdataSheetItem, ElementExpected, ElementVerify,
                                                  PageName, TestResult, TestResultStatus)
 
-            # -------------------Inspections Completed Graph------------------------------
-            ElementVerify = "Inspections Completed Graph"
-            PageName = "Home"
-            ElementExpected = "Completed"
-            MdataSheetTab = "test_Smoke_Home_Admin"
-            MdataSheetItem = "InspectionsGraphCompleted"
-            ElementPresentCls.ElementPresentMeth(driver, MdataSheetTab, MdataSheetItem, ElementExpected, ElementVerify,
-                                                 PageName, TestResult, TestResultStatus)
+            # # -------------------Inspections Completed Graph------------------------------
+            # ElementVerify = "Inspections Completed Graph"
+            # PageName = "Home"
+            # ElementExpected = "Completed"
+            # MdataSheetTab = "test_Smoke_Home_Admin"
+            # MdataSheetItem = "InspectionsGraphCompleted"
+            # ElementPresentCls.ElementPresentMeth(driver, MdataSheetTab, MdataSheetItem, ElementExpected, ElementVerify,
+            #                                      PageName, TestResult, TestResultStatus)
+            #
+            # # -------------------Work Orders New Graph------------------------------
+            # ElementVerify = "Work Orders New Graph"
+            # PageName = "Home"
+            # ElementExpected = "New"
+            # MdataSheetTab = "test_Smoke_Home_Admin"
+            # MdataSheetItem = "WorkOrdersGraphNew"
+            # ElementPresentCls.ElementPresentMeth(driver, MdataSheetTab, MdataSheetItem, ElementExpected, ElementVerify,
+            #                                      PageName, TestResult, TestResultStatus)
+            #
+            # # -------------------Work Orders Completed Graph------------------------------
+            # ElementVerify = "Work Orders Completed Graph"
+            # PageName = "Home"
+            # ElementExpected = "Completed"
+            # MdataSheetTab = "test_Smoke_Home_Admin"
+            # MdataSheetItem = "WorkOrdersGraphCompleted"
+            # ElementPresentCls.ElementPresentMeth(driver, MdataSheetTab, MdataSheetItem, ElementExpected, ElementVerify,
+            #                                      PageName, TestResult, TestResultStatus)
+            #
+            # # --------------------Properties With Open Work BUTTONS------------------------
+            # # -------------------Incomplete Inspections Button------------------------------
+            # ElementVerify = "Incomplete Inspections Button"
+            # PageName = "Home"
+            # MdataSheetTab = "test_Smoke_Home_Admin"
+            # MdataSheetItem = "IncompleteInspectionsButton"
+            # MdataSheetItem2 = "IncompleteInspectionsButtonText"
+            # ElementExpected = "Inspections"
+            # ElementActionCls.ElementActionMeth(driver, MdataSheetTab, MdataSheetItem, MdataSheetItem2, ElementExpected,
+            #                                    ElementVerify,
+            #                                    PageName, TestResult, TestResultStatus)
+            # SafeToClick = SafeToElementActionCls.SafeToElementActionMeth(driver, SafeToVerify, "test_Smoke_Home_Admin",
+            #                                                              "SafeToIncompleteInspectionsClick")
+            # if SafeToClick == "Yes":
+            #     # -------------------Home Property Click------------------------------
+            #     ElementVerify = "Property link text click for " + ElementVerify
+            #     PageName = "Home"
+            #     MdataSheetTab = "test_Smoke_Home_Admin"
+            #     MdataSheetItem = "HomePropertyClick"
+            #     MdataSheetItem2 = "HomePropertyClickText"
+            #     ElementExpected = "Property Information"
+            #     ElementActionCls.ElementActionMeth(driver, MdataSheetTab, MdataSheetItem, MdataSheetItem2,
+            #                                        ElementExpected,
+            #                                        ElementVerify,
+            #                                        PageName, TestResult, TestResultStatus)
+            #     driver.find_element(By.XPATH, "//a/div[contains(text(),'Home')]").click()
+            # else:
+            #     print("No Data available **************** for " + ElementVerify)
+            # # -------------------Pending Inspections Button------------------------------
+            # ElementVerify = "Pending Inspections Button"
+            # PageName = "Home"
+            # MdataSheetTab = "test_Smoke_Home_Admin"
+            # MdataSheetItem = "PendingInspectionsButton"
+            # MdataSheetItem2 = "PendingInspectionsButtonText"
+            # ElementExpected = "Inspections"
+            # ElementActionCls.ElementActionMeth(driver, MdataSheetTab, MdataSheetItem, MdataSheetItem2, ElementExpected,
+            #                                    ElementVerify,
+            #                                    PageName, TestResult, TestResultStatus)
+            # SafeToClick = SafeToElementActionCls.SafeToElementActionMeth(driver, SafeToVerify, "test_Smoke_Home_Admin",
+            #                                                              "SafeToPendingInspectionsClick")
+            # if SafeToClick == "Yes":
+            #     # -------------------Home Property Click------------------------------
+            #     ElementVerify = "Property link text click for " + ElementVerify
+            #     PageName = "Home"
+            #     MdataSheetTab = "test_Smoke_Home_Admin"
+            #     MdataSheetItem = "HomePropertyClick"
+            #     MdataSheetItem2 = "HomePropertyClickText"
+            #     ElementExpected = "Property Information"
+            #     ElementActionCls.ElementActionMeth(driver, MdataSheetTab, MdataSheetItem, MdataSheetItem2,
+            #                                        ElementExpected,
+            #                                        ElementVerify,
+            #                                        PageName, TestResult, TestResultStatus)
+            #     driver.find_element(By.XPATH, "//a/div[contains(text(),'Home')]").click()
+            # else:
+            #     print("No Data available **************** for " + ElementVerify)
+            # # -------------------Open Work Orders Button------------------------------
+            # ElementVerify = "Open Work Orders Button"
+            # PageName = "Home"
+            # MdataSheetTab = "test_Smoke_Home_Admin"
+            # MdataSheetItem = "OpenWorkOrdersButton"
+            # MdataSheetItem2 = "OpenWorkOrdersButtonText"
+            # ElementExpected = "Work Orders"
+            # ElementActionCls.ElementActionMeth(driver, MdataSheetTab, MdataSheetItem, MdataSheetItem2, ElementExpected,
+            #                                    ElementVerify,
+            #                                    PageName, TestResult, TestResultStatus)
+            # SafeToClick = SafeToElementActionCls.SafeToElementActionMeth(driver, SafeToVerify, "test_Smoke_Home_Admin",
+            #                                                              "SafeToOpenWorkOrdersClick")
+            # if SafeToClick == "Yes":
+            #     # -------------------Home Property Click------------------------------
+            #     ElementVerify = "Property link text click for " + ElementVerify
+            #     PageName = "Home"
+            #     MdataSheetTab = "test_Smoke_Home_Admin"
+            #     MdataSheetItem = "HomePropertyClick"
+            #     MdataSheetItem2 = "HomePropertyClickText"
+            #     ElementExpected = "Property Information"
+            #     ElementActionCls.ElementActionMeth(driver, MdataSheetTab, MdataSheetItem, MdataSheetItem2,
+            #                                        ElementExpected,
+            #                                        ElementVerify,
+            #                                        PageName, TestResult, TestResultStatus)
+            #     driver.find_element(By.XPATH, "//a/div[contains(text(),'Home')]").click()
+            # else:
+            #     print("No Data available **************** for " + ElementVerify)
+            #
+            # # --------------------Inspections Requiring Action BUTTONS------------------------
+            # # -------------------Work Order Required Button------------------------------
+            # ElementVerify = "Work Order Required Button"
+            # PageName = "Home"
+            # MdataSheetTab = "test_Smoke_Home_Admin"
+            # MdataSheetItem = "WorkOrderRequiredButton"
+            # MdataSheetItem2 = "WorkOrderRequiredButtonText"
+            # ElementExpected = "Inspection Type"
+            # ElementActionCls.ElementActionMeth(driver, MdataSheetTab, MdataSheetItem, MdataSheetItem2, ElementExpected,
+            #                                    ElementVerify,
+            #                                    PageName, TestResult, TestResultStatus)
+            # SafeToClick = SafeToElementActionCls.SafeToElementActionMeth(driver, SafeToVerify, "test_Smoke_Home_Admin",
+            #                                                              "SafeToWorkOrderRequiredClick")
+            # if SafeToClick == "Yes":
+            #     # -------------------Home Inspection Click------------------------------
+            #     ElementVerify = "Inspection link text click for " + ElementVerify
+            #     PageName = "Home"
+            #     MdataSheetTab = "test_Smoke_Home_Admin"
+            #     MdataSheetItem = "HomeInspectionClick"
+            #     MdataSheetItem2 = "HomeInspectionClickText"
+            #     ElementExpected = "Inspection Date"
+            #     ElementActionCls.ElementActionMeth(driver, MdataSheetTab, MdataSheetItem, MdataSheetItem2,
+            #                                        ElementExpected,
+            #                                        ElementVerify,
+            #                                        PageName, TestResult, TestResultStatus)
+            #     driver.find_element(By.XPATH, "//a/div[contains(text(),'Home')]").click()
+            # else:
+            #     print("No Data available **************** for " + ElementVerify)
+            #
+            # # -------------------Sign off Required Button------------------------------
+            # ElementVerify = "Sign Off Required Button"
+            # PageName = "Home"
+            # MdataSheetTab = "test_Smoke_Home_Admin"
+            # MdataSheetItem = "SignOffRequiredButton"
+            # MdataSheetItem2 = "SignOffRequiredButtonText"
+            # ElementExpected = "Inspection Type"
+            # ElementActionCls.ElementActionMeth(driver, MdataSheetTab, MdataSheetItem, MdataSheetItem2, ElementExpected,
+            #                                    ElementVerify,
+            #                                    PageName, TestResult, TestResultStatus)
+            # SafeToClick = SafeToElementActionCls.SafeToElementActionMeth(driver, SafeToVerify, "test_Smoke_Home_Admin",
+            #                                                              "SafeToSignOffRequiredClick")
+            # if SafeToClick == "Yes":
+            #     # -------------------Home Inspection Click------------------------------
+            #     ElementVerify = "Inspection link text click for " + ElementVerify
+            #     PageName = "Home"
+            #     MdataSheetTab = "test_Smoke_Home_Admin"
+            #     MdataSheetItem = "HomeInspectionClick"
+            #     MdataSheetItem2 = "HomeInspectionClickText"
+            #     ElementExpected = "Inspection Date"
+            #     ElementActionCls.ElementActionMeth(driver, MdataSheetTab, MdataSheetItem, MdataSheetItem2,
+            #                                        ElementExpected,
+            #                                        ElementVerify,
+            #                                        PageName, TestResult, TestResultStatus)
+            #     driver.find_element(By.XPATH, "//a/div[contains(text(),'Home')]").click()
+            # else:
+            #     print("No Data available **************** for " + ElementVerify)
+            #
+            # # -------------------Finalization Required Button------------------------------
+            # ElementVerify = "Finalization Required Button"
+            # PageName = "Home"
+            # MdataSheetTab = "test_Smoke_Home_Admin"
+            # MdataSheetItem = "FinalizationRequiredButton"
+            # MdataSheetItem2 = "FinalizationRequiredButtonText"
+            # ElementExpected = "Inspection Type"
+            # ElementActionCls.ElementActionMeth(driver, MdataSheetTab, MdataSheetItem, MdataSheetItem2, ElementExpected,
+            #                                    ElementVerify,
+            #                                    PageName, TestResult, TestResultStatus)
+            # SafeToClick = SafeToElementActionCls.SafeToElementActionMeth(driver, SafeToVerify, "test_Smoke_Home_Admin",
+            #                                                              "SafeToFinalizationRequiredClick")
+            # if SafeToClick=="Yes":
+            #     # -------------------Home Inspection Click------------------------------
+            #     ElementVerify = "Inspection link text click for " + ElementVerify
+            #     PageName = "Home"
+            #     MdataSheetTab = "test_Smoke_Home_Admin"
+            #     MdataSheetItem = "HomeInspectionClick"
+            #     MdataSheetItem2 = "HomeInspectionClickText"
+            #     ElementExpected = "Inspection Date"
+            #     ElementActionCls.ElementActionMeth(driver, MdataSheetTab, MdataSheetItem, MdataSheetItem2,
+            #                                        ElementExpected,
+            #                                        ElementVerify,
+            #                                        PageName, TestResult, TestResultStatus)
+            #     driver.find_element(By.XPATH, "//a/div[contains(text(),'Home')]").click()
+            #     LoaderCls.LoaderMeth(driver)
+            # else:
+            #     print("No Data available **************** for " + ElementVerify)
 
-            # -------------------Work Orders New Graph------------------------------
-            ElementVerify = "Work Orders New Graph"
-            PageName = "Home"
-            ElementExpected = "New"
-            MdataSheetTab = "test_Smoke_Home_Admin"
-            MdataSheetItem = "WorkOrdersGraphNew"
-            ElementPresentCls.ElementPresentMeth(driver, MdataSheetTab, MdataSheetItem, ElementExpected, ElementVerify,
-                                                 PageName, TestResult, TestResultStatus)
-
-            # -------------------Work Orders Completed Graph------------------------------
-            ElementVerify = "Work Orders Completed Graph"
-            PageName = "Home"
-            ElementExpected = "Completed"
-            MdataSheetTab = "test_Smoke_Home_Admin"
-            MdataSheetItem = "WorkOrdersGraphCompleted"
-            ElementPresentCls.ElementPresentMeth(driver, MdataSheetTab, MdataSheetItem, ElementExpected, ElementVerify,
-                                                 PageName, TestResult, TestResultStatus)
-
-            # --------------------Properties With Open Work BUTTONS------------------------
-            # -------------------Incomplete Inspections Button------------------------------
-            ElementVerify = "Incomplete Inspections Button"
-            PageName = "Home"
-            MdataSheetTab = "test_Smoke_Home_Admin"
-            MdataSheetItem = "IncompleteInspectionsButton"
-            MdataSheetItem2 = "IncompleteInspectionsButtonText"
-            ElementExpected = "Inspections"
-            ElementActionCls.ElementActionMeth(driver, MdataSheetTab, MdataSheetItem, MdataSheetItem2, ElementExpected,
-                                               ElementVerify,
-                                               PageName, TestResult, TestResultStatus)
-            SafeToClick = SafeToElementActionCls.SafeToElementActionMeth(driver, SafeToVerify, "test_Smoke_Home_Admin",
-                                                                         "SafeToIncompleteInspectionsClick")
-            if SafeToClick == "Yes":
-                # -------------------Home Property Click------------------------------
-                ElementVerify = "Property link text click for " + ElementVerify
-                PageName = "Home"
-                MdataSheetTab = "test_Smoke_Home_Admin"
-                MdataSheetItem = "HomePropertyClick"
-                MdataSheetItem2 = "HomePropertyClickText"
-                ElementExpected = "Property Information"
-                ElementActionCls.ElementActionMeth(driver, MdataSheetTab, MdataSheetItem, MdataSheetItem2,
-                                                   ElementExpected,
-                                                   ElementVerify,
-                                                   PageName, TestResult, TestResultStatus)
-                driver.find_element(By.XPATH, "//a/div[contains(text(),'Home')]").click()
-            else:
-                print("No Data available **************** for " + ElementVerify)
-            # -------------------Pending Inspections Button------------------------------
-            ElementVerify = "Pending Inspections Button"
-            PageName = "Home"
-            MdataSheetTab = "test_Smoke_Home_Admin"
-            MdataSheetItem = "PendingInspectionsButton"
-            MdataSheetItem2 = "PendingInspectionsButtonText"
-            ElementExpected = "Inspections"
-            ElementActionCls.ElementActionMeth(driver, MdataSheetTab, MdataSheetItem, MdataSheetItem2, ElementExpected,
-                                               ElementVerify,
-                                               PageName, TestResult, TestResultStatus)
-            SafeToClick = SafeToElementActionCls.SafeToElementActionMeth(driver, SafeToVerify, "test_Smoke_Home_Admin",
-                                                                         "SafeToPendingInspectionsClick")
-            if SafeToClick == "Yes":
-                # -------------------Home Property Click------------------------------
-                ElementVerify = "Property link text click for " + ElementVerify
-                PageName = "Home"
-                MdataSheetTab = "test_Smoke_Home_Admin"
-                MdataSheetItem = "HomePropertyClick"
-                MdataSheetItem2 = "HomePropertyClickText"
-                ElementExpected = "Property Information"
-                ElementActionCls.ElementActionMeth(driver, MdataSheetTab, MdataSheetItem, MdataSheetItem2,
-                                                   ElementExpected,
-                                                   ElementVerify,
-                                                   PageName, TestResult, TestResultStatus)
-                driver.find_element(By.XPATH, "//a/div[contains(text(),'Home')]").click()
-            else:
-                print("No Data available **************** for " + ElementVerify)
-            # -------------------Open Work Orders Button------------------------------
-            ElementVerify = "Open Work Orders Button"
-            PageName = "Home"
-            MdataSheetTab = "test_Smoke_Home_Admin"
-            MdataSheetItem = "OpenWorkOrdersButton"
-            MdataSheetItem2 = "OpenWorkOrdersButtonText"
-            ElementExpected = "Work Orders"
-            ElementActionCls.ElementActionMeth(driver, MdataSheetTab, MdataSheetItem, MdataSheetItem2, ElementExpected,
-                                               ElementVerify,
-                                               PageName, TestResult, TestResultStatus)
-            SafeToClick = SafeToElementActionCls.SafeToElementActionMeth(driver, SafeToVerify, "test_Smoke_Home_Admin",
-                                                                         "SafeToOpenWorkOrdersClick")
-            if SafeToClick == "Yes":
-                # -------------------Home Property Click------------------------------
-                ElementVerify = "Property link text click for " + ElementVerify
-                PageName = "Home"
-                MdataSheetTab = "test_Smoke_Home_Admin"
-                MdataSheetItem = "HomePropertyClick"
-                MdataSheetItem2 = "HomePropertyClickText"
-                ElementExpected = "Property Information"
-                ElementActionCls.ElementActionMeth(driver, MdataSheetTab, MdataSheetItem, MdataSheetItem2,
-                                                   ElementExpected,
-                                                   ElementVerify,
-                                                   PageName, TestResult, TestResultStatus)
-                driver.find_element(By.XPATH, "//a/div[contains(text(),'Home')]").click()
-            else:
-                print("No Data available **************** for " + ElementVerify)
-
-            # --------------------Inspections Requiring Action BUTTONS------------------------
-            # -------------------Work Order Required Button------------------------------
-            ElementVerify = "Work Order Required Button"
-            PageName = "Home"
-            MdataSheetTab = "test_Smoke_Home_Admin"
-            MdataSheetItem = "WorkOrderRequiredButton"
-            MdataSheetItem2 = "WorkOrderRequiredButtonText"
-            ElementExpected = "Inspection Type"
-            ElementActionCls.ElementActionMeth(driver, MdataSheetTab, MdataSheetItem, MdataSheetItem2, ElementExpected,
-                                               ElementVerify,
-                                               PageName, TestResult, TestResultStatus)
-            SafeToClick = SafeToElementActionCls.SafeToElementActionMeth(driver, SafeToVerify, "test_Smoke_Home_Admin",
-                                                                         "SafeToWorkOrderRequiredClick")
-            if SafeToClick == "Yes":
-                # -------------------Home Inspection Click------------------------------
-                ElementVerify = "Inspection link text click for " + ElementVerify
-                PageName = "Home"
-                MdataSheetTab = "test_Smoke_Home_Admin"
-                MdataSheetItem = "HomeInspectionClick"
-                MdataSheetItem2 = "HomeInspectionClickText"
-                ElementExpected = "Inspection Date"
-                ElementActionCls.ElementActionMeth(driver, MdataSheetTab, MdataSheetItem, MdataSheetItem2,
-                                                   ElementExpected,
-                                                   ElementVerify,
-                                                   PageName, TestResult, TestResultStatus)
-                driver.find_element(By.XPATH, "//a/div[contains(text(),'Home')]").click()
-            else:
-                print("No Data available **************** for " + ElementVerify)
-
-            # -------------------Sign off Required Button------------------------------
-            ElementVerify = "Sign Off Required Button"
-            PageName = "Home"
-            MdataSheetTab = "test_Smoke_Home_Admin"
-            MdataSheetItem = "SignOffRequiredButton"
-            MdataSheetItem2 = "SignOffRequiredButtonText"
-            ElementExpected = "Inspection Type"
-            ElementActionCls.ElementActionMeth(driver, MdataSheetTab, MdataSheetItem, MdataSheetItem2, ElementExpected,
-                                               ElementVerify,
-                                               PageName, TestResult, TestResultStatus)
-            SafeToClick = SafeToElementActionCls.SafeToElementActionMeth(driver, SafeToVerify, "test_Smoke_Home_Admin",
-                                                                         "SafeToSignOffRequiredClick")
-            if SafeToClick == "Yes":
-                # -------------------Home Inspection Click------------------------------
-                ElementVerify = "Inspection link text click for " + ElementVerify
-                PageName = "Home"
-                MdataSheetTab = "test_Smoke_Home_Admin"
-                MdataSheetItem = "HomeInspectionClick"
-                MdataSheetItem2 = "HomeInspectionClickText"
-                ElementExpected = "Inspection Date"
-                ElementActionCls.ElementActionMeth(driver, MdataSheetTab, MdataSheetItem, MdataSheetItem2,
-                                                   ElementExpected,
-                                                   ElementVerify,
-                                                   PageName, TestResult, TestResultStatus)
-                driver.find_element(By.XPATH, "//a/div[contains(text(),'Home')]").click()
-            else:
-                print("No Data available **************** for " + ElementVerify)
-
-            # -------------------Finalization Required Button------------------------------
-            ElementVerify = "Finalization Required Button"
-            PageName = "Home"
-            MdataSheetTab = "test_Smoke_Home_Admin"
-            MdataSheetItem = "FinalizationRequiredButton"
-            MdataSheetItem2 = "FinalizationRequiredButtonText"
-            ElementExpected = "Inspection Type"
-            ElementActionCls.ElementActionMeth(driver, MdataSheetTab, MdataSheetItem, MdataSheetItem2, ElementExpected,
-                                               ElementVerify,
-                                               PageName, TestResult, TestResultStatus)
-            SafeToClick = SafeToElementActionCls.SafeToElementActionMeth(driver, SafeToVerify, "test_Smoke_Home_Admin",
-                                                                         "SafeToFinalizationRequiredClick")
-            if SafeToClick=="Yes":
-                # -------------------Home Inspection Click------------------------------
-                ElementVerify = "Inspection link text click for " + ElementVerify
-                PageName = "Home"
-                MdataSheetTab = "test_Smoke_Home_Admin"
-                MdataSheetItem = "HomeInspectionClick"
-                MdataSheetItem2 = "HomeInspectionClickText"
-                ElementExpected = "Inspection Date"
-                ElementActionCls.ElementActionMeth(driver, MdataSheetTab, MdataSheetItem, MdataSheetItem2,
-                                                   ElementExpected,
-                                                   ElementVerify,
-                                                   PageName, TestResult, TestResultStatus)
-                driver.find_element(By.XPATH, "//a/div[contains(text(),'Home')]").click()
-                LoaderCls.LoaderMeth(driver)
-            else:
-                print("No Data available **************** for " + ElementVerify)
-
+            driver.find_element(By.XPATH, "//a/div[contains(text(),'Home')]").click()
             # -------------------Incomplete Inspections Count------------------------------
             driver.find_element(By.XPATH, "//button[contains(text(),'Incomplete Inspections')]").click()
             LoaderCls.LoaderMeth(driver)
@@ -539,7 +477,9 @@ def test_AllModules(test_setup):
                     if FooterCount == "No items available":
                         FooterCount = "0"
                     else:
-                        FooterCount="No Count"
+                        FooterCount = driver.find_elements(By.XPATH,
+                                                          "//span[contains(text(),'Properties With Open Work')]/parent::h2/parent::div/div/div/div/div[2]/div[2]/div/div[2]/div[1]/table/thead/tr/th[2]/div[contains(text(),'Inspections')]/parent::th/parent::tr/parent::thead/parent::table/tbody/tr")
+                        FooterCount=str(len(FooterCount))
 
             print("FooterCount is " + FooterCount)
             ElementFound = FooterCount

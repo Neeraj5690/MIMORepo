@@ -375,53 +375,6 @@ def test_AllModules(test_setup):
                 print("No Data available **************** for " + ElementVerify)
             driver.find_element(By.XPATH, "//a/div[contains(text(),'Home')]").click()
 
-
-            # # -------------------Incomplete Inspections Count------------------------------
-            # driver.find_element(By.XPATH, "//button[contains(text(),'Incomplete Inspections')]").click()
-            # LoaderCls.LoaderMeth(driver)
-            # ElementVerify = "Incomplete Inspections Count"
-            # PageName = "Home"
-            # Count = driver.find_element(By.XPATH, "//button[contains(text(),'Incomplete Inspections')]").text
-            # start = '('
-            # end = ')'
-            # Count = Count[Count.find(start) + len(start):Count.rfind(end)]
-            # print("Count is " + Count)
-            # ElementExpected = Count
-            # try:
-            #     print("11")
-            #     FooterCount = driver.find_element(By.XPATH,
-            #                                       "//span[contains(text(),'Properties With Open Work')]/parent::h2/parent::div/div/div/div/div[2]/div[2]/div/div[2]/div[2]/div/div/span[2]/strong").text
-            # except:
-            #     try:
-            #         print("22")
-            #         FooterCount = driver.find_element(By.XPATH,
-            #                                           "//span[contains(text(),'Properties With Open Work')]/parent::h2/parent::div/div/div/div/div[2]/div[2]/div/div[2]/div[2]/div/div/span[3]").text
-            #         start = 'of '
-            #         end = ''
-            #         FooterCount = FooterCount[FooterCount.find(start) + len(start):FooterCount.rfind(end)]
-            #     except:
-            #         print("333")
-            #         FooterCount = driver.find_element(By.XPATH,
-            #                                           "//span[contains(text(),'Properties With Open Work')]/parent::h2/parent::div/div/div/div/div[2]/div[2]/div/div[2]/div[1]/table/thead/tr/th[2]/div[contains(text(),'Inspections')]/parent::th/parent::tr/parent::thead/parent::table/tbody/tr[1]/td[1]").text
-            #         if FooterCount == "No items available":
-            #             FooterCount = "0"
-            #         else:
-            #             FooterCount="No Count"
-            #
-            # print("FooterCount is " + FooterCount)
-            # ElementFound = FooterCount
-            # if ElementExpected == ElementFound:
-            #     TestResult.append(
-            #         ElementVerify + " (" + ElementExpected + ") " + " at " + PageName + " was matching with number of records" + " (" + ElementFound + ")")
-            #     TestResultStatus.append("Pass")
-            # else:
-            #     TestResult.append(
-            #         ElementVerify + " (" + ElementExpected + ") " + " at " + PageName + "was not matching with number of "
-            #                                                                             "records" + " (" +
-            #         ElementFound + ")")
-            #     TestResultStatus.append("Fail")
-            #
-
         except Exception as Mainerror:
             print(Mainerror)
             stringMainerror = repr(Mainerror)
