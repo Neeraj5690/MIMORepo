@@ -1,7 +1,5 @@
 import datetime
 import sys
-from TestEnvironment.GlobalElementActionNewTab.ElementActionNewTab import ElementActionClsNewTab
-
 if "C:/Users/Neeraj/PycharmProjects/MIMO" not in sys.path:
     sys.path.append("C:/Users/Neeraj/PycharmProjects/MIMO")
 import time
@@ -18,11 +16,9 @@ from TestEnvironment.GlobalElementAction.SafeToElementAction import SafeToElemen
 from TestEnvironment.GlobalElementPresent.ElementPresent import ElementPresentCls
 from TestEnvironment.GlobalLoader.Loader import LoaderCls
 
-
 @allure.step("Entering username ")
 def enter_username(username):
     driver.find_element(By.ID, "un").send_keys(username)
-
 
 @allure.step("Entering password ")
 def enter_password(password):
@@ -215,11 +211,19 @@ def test_AllModules(test_setup):
                                                ElementVerify,
                                                PageName, TestResult, TestResultStatus)
             SafeToClick = SafeToElementActionCls.SafeToElementActionMeth(driver, SafeToVerify, "test_Smoke_Home_Vendor",
-                                                                         "SafeToOpenWorkOrdersClick")
+                                                                         "SafeToPendingWorkOrdersClick")
             print("SafeToClick is "+SafeToClick)
             if SafeToClick == "Yes":
                 # -------------------Work OrderID Click------------------------------
-                ElementVerify = "Work OrderID link text click for " + ElementVerify
+                Element = "Work Order ID link text"
+                Click_Element = "WorkOrdersID_PendWO_Ele"
+                if Click_Element == "Skip":
+                    ElementVerify = Element + " click for " + ElementVerify
+                else:
+                    ElementID = driver.find_element(By.XPATH,
+                                                    DataReadMaster.GlobalData(MdataSheetTab, Click_Element)).text
+                    ElementVerify = Element + " [ " + ElementID + " ] click for " + ElementVerify
+
                 PageName = "Home"
                 MdataSheetTab = "test_Smoke_Home_Vendor"
                 MdataSheetItem = "WorkOrdersIDClick"
@@ -250,7 +254,17 @@ def test_AllModules(test_setup):
             print("SafeToClick is "+SafeToClick)
             if SafeToClick == "Yes":
                 # -------------------Work OrderID Click------------------------------
-                ElementVerify = "Work OrderID link text click for " + ElementVerify
+                Element="Work Order ID link text"
+                Click_Element = "WorkOrdersID_InProgWO_Ele"
+                if Click_Element == "Skip":
+                    ElementVerify = Element+" click for " + ElementVerify
+                else:
+                    ElementID = driver.find_element(By.XPATH,
+                                                    DataReadMaster.GlobalData(MdataSheetTab, Click_Element)).text
+                    ElementVerify = Element+" [ " + ElementID + " ] click for " + ElementVerify
+
+                ElementID = driver.find_element(By.XPATH, DataReadMaster.GlobalData(MdataSheetTab, Click_Element)).text
+                ElementVerify = "Work OrderID [ "+ElementID+" ] link text click for " + ElementVerify
                 PageName = "Home"
                 MdataSheetTab = "test_Smoke_Home_Vendor"
                 MdataSheetItem = "WorkOrdersIDClick"

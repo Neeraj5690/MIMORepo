@@ -1,6 +1,5 @@
 import datetime
 import sys
-
 if "C:/Users/Neeraj/PycharmProjects/MIMO" not in sys.path:
     sys.path.append("C:/Users/Neeraj/PycharmProjects/MIMO")
 import time
@@ -14,9 +13,7 @@ from chrome.LatestChrome import ChromeCls
 from TestEnvironment.GlobalClassMethods.MasterDataExcelReader import DataReadMaster
 from TestEnvironment.GlobalElementAction.ElementAction import ElementActionCls
 from TestEnvironment.GlobalElementAction.SafeToElementAction import SafeToElementActionCls, SafeToVerify
-from TestEnvironment.GlobalElementPresent.ElementPresent import ElementPresentCls
 from TestEnvironment.GlobalLoader.Loader import LoaderCls
-
 
 @allure.step("Entering username ")
 def enter_username(username):
@@ -26,7 +23,6 @@ def enter_username(username):
 @allure.step("Entering password ")
 def enter_password(password):
     driver.find_element(By.ID, "pw").send_keys(password)
-
 
 @pytest.fixture()
 def test_setup():
@@ -190,19 +186,28 @@ def test_AllModules(test_setup):
                 TestResultStatus.append("Fail")
 
             # ---------------------------Verify Work Order listing click-----------------------------
+            PageName = "Previous Work"
+            MdataSheetTab = "test_Smoke_PreviousWork_Vendor"
+            MdataSheetItem = "WorkOrdersIDClick"
+            MdataSheetItem2 = "WorkOrdersIDClick1Text"
+            ElementExpected = "Work Order Details"
+
             ElementVerify = "Work Orders Listing"
-            SafeToClick = SafeToElementActionCls.SafeToElementActionMeth(driver, SafeToVerify, "test_Smoke_PreviousWork_Vendor",
+            SafeToClick = SafeToElementActionCls.SafeToElementActionMeth(driver, SafeToVerify, MdataSheetTab,
                                                                          "SafeToOpenWorkOrdersClick")
             print("SafeToClick is "+SafeToClick)
             if SafeToClick == "Yes":
                 # -------------------Work OrderID Click------------------------------
-                ElementVerify = "Work Order ID link text click for " + ElementVerify
-                PageName = "Previous Work"
-                MdataSheetTab = "test_Smoke_PreviousWork_Vendor"
-                MdataSheetItem = "WorkOrdersIDClick"
-                MdataSheetItem2 = "WorkOrdersIDClick1Text"
-                ElementExpected = "Work Order Details"
-                ElementActionCls.ElementActionMeth(driver, MdataSheetTab, MdataSheetItem, MdataSheetItem2,
+                Element = "Work Order ID"
+                Click_Element = "WorkOrdersID_Ele"
+                if Click_Element == "Skip":
+                    ElementVerify = Element + " click for " + ElementVerify
+                else:
+                    ElementID = driver.find_element(By.XPATH,
+                                                    DataReadMaster.GlobalData(MdataSheetTab, Click_Element)).text
+                    ElementVerify = Element + " [ " + ElementID + " ] click for " + ElementVerify
+
+                ElementActionCls.ElementActionMeth(driver,MdataSheetTab, MdataSheetItem, MdataSheetItem2,
                                                    ElementExpected,
                                                    ElementVerify,
                                                    PageName, TestResult, TestResultStatus)
@@ -285,5 +290,3 @@ def test_AllModules(test_setup):
                 sheet.cell(row=i, column=5).value = "Skipped"
                 wb.save(loc)
         # ----------------------------------------------------------------------------
-# if __name__=='__main__':
-#     test_setup()
