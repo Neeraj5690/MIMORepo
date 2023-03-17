@@ -262,9 +262,6 @@ def test_AllModules(test_setup):
                     ElementID = driver.find_element(By.XPATH,
                                                     DataReadMaster.GlobalData(MdataSheetTab, Click_Element)).text
                     ElementVerify = Element+" [ " + ElementID + " ] click for " + ElementVerify
-
-                ElementID = driver.find_element(By.XPATH, DataReadMaster.GlobalData(MdataSheetTab, Click_Element)).text
-                ElementVerify = "Work OrderID [ "+ElementID+" ] link text click for " + ElementVerify
                 PageName = "Home"
                 MdataSheetTab = "test_Smoke_Home_Vendor"
                 MdataSheetItem = "WorkOrdersIDClick"
