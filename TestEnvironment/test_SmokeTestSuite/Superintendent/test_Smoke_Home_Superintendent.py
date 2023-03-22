@@ -170,7 +170,6 @@ def test_setup():
         # -----------------------------------------------------------------------------
         driver.quit()
 
-
 @pytest.mark.smoke
 def test_AllModules(test_setup):
     if Exe == "Yes":
@@ -307,7 +306,7 @@ def test_AllModules(test_setup):
             print("SafeToClick is "+SafeToClick)
             if SafeToClick == "Yes":
                 # -------------------*********** Click------------------------------
-                ElementVerify = "************ for " + ElementVerify
+                ElementVerify = "InspectionID link text click for " + ElementVerify
                 PageName = "Home"
                 MdataSheetTab = "test_Smoke_Home_Superintendent"
                 MdataSheetItem = "OpenWorkOrdersInspectionIDClick"

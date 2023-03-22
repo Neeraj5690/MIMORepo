@@ -269,10 +269,10 @@ def test_AllModules(test_setup):
                             print("333")
                             FooterCount = driver.find_element(By.XPATH,
                                                               "//aspan[contains(text(),'Properties With Open Work')]/parent::h2/parent::div/div/div/div/div[2]/div[2]/div/div[2]/div[1]/table/thead/tr/th[2]/div[contains(text(),'Inspections')]/parent::th/parent::tr/parent::thead/parent::table/tbody/tr[1]/td[1]").text
-                            if FooterCount == "No items available":
+                            if "No" or "no" in FooterCount:
+                                print("No found, so count is 0")
                                 FooterCount = "0"
-                            else:
-                                FooterCount = "No Count"
+
                         except:
                             print("444")
                             FooterCount = driver.find_elements(By.XPATH,
@@ -347,10 +347,9 @@ def test_AllModules(test_setup):
                             print("333")
                             FooterCount = driver.find_element(By.XPATH,
                                                               "//span[contains(text(),'Properties With Open Work')]/parent::h2/parent::div/div/div/div/div[2]/div[2]/div/div[2]/div[1]/table/thead/tr/th[2]/div[contains(text(),'Inspections')]/parent::th/parent::tr/parent::thead/parent::table/tbody/tr[1]/td[1]").text
-                            if FooterCount == "No items available":
+                            if "No" or "no" in FooterCount:
+                                print("No found, so count is 0")
                                 FooterCount = "0"
-                            else:
-                                FooterCount = "No Count"
                         except:
                             print("444")
                             FooterCount = driver.find_elements(By.XPATH,
@@ -424,10 +423,9 @@ def test_AllModules(test_setup):
                             print("333")
                             FooterCount = driver.find_element(By.XPATH,
                                                               "//span[contains(text(),'Properties With Open Work')]/parent::h2/parent::div/div/div/div/div[2]/div[2]/div/div[2]/div[1]/table/thead/tr/th[2]/div[contains(text(),'Inspections')]/parent::th/parent::tr/parent::thead/parent::table/tbody/tr[1]/td[1]").text
-                            if FooterCount == "No items available":
+                            if "No" or "no" in FooterCount:
+                                print("No found, so count is 0")
                                 FooterCount = "0"
-                            else:
-                                FooterCount = "No Count"
                         except:
                             print("444")
                             FooterCount = driver.find_elements(By.XPATH,
@@ -449,6 +447,7 @@ def test_AllModules(test_setup):
                 print("No Data available **************** for " + ElementVerify)
                 FooterCount="0"
             # ---------------Matching Count for Open Work Orders ---------------
+            ElementVerify = "Open Work Orders Count"
             print("FooterCount is " + FooterCount)
             ElementFound = FooterCount
             if Count == ElementFound:
@@ -483,16 +482,15 @@ def test_AllModules(test_setup):
             print("Count is " + Count)
             if SafeToClick == "Yes":
                 # -------------------Work Order Required Count------------------------------
-
                 try:
                     print("11")
                     FooterCount = driver.find_element(By.XPATH,
-                                                      "//span[contains(text(),'Properties With Open Work')]/parent::h2/parent::div/div/div/div/div[2]/div[2]/div/div[2]/div[2]/div/div/span[2]/strong").text
+                                                      "//span[contains(text(),'Inspections Requiring Action')]/parent::h2/parent::div/div/div/div/div[2]/div[2]/div/div[2]/div[2]/div/div/span[2]/strong").text
                 except:
                     try:
                         print("22")
                         FooterCount = driver.find_element(By.XPATH,
-                                                          "//span[contains(text(),'Properties With Open Work')]/parent::h2/parent::div/div/div/div/div[2]/div[2]/div/div[2]/div[2]/div/div/span[3]").text
+                                                          "//span[contains(text(),'Inspections Requiring Action')]/parent::h2/parent::div/div/div/div/div[2]/div[2]/div/div[2]/div[2]/div/div/span[3]").text
                         start = 'of '
                         end = ''
                         FooterCount = FooterCount[FooterCount.find(start) + len(start):FooterCount.rfind(end)]
@@ -500,15 +498,14 @@ def test_AllModules(test_setup):
                         try:
                             print("333")
                             FooterCount = driver.find_element(By.XPATH,
-                                                              "//span[contains(text(),'Properties With Open Work')]/parent::h2/parent::div/div/div/div/div[2]/div[2]/div/div[2]/div[1]/table/thead/tr/th[2]/div[contains(text(),'Inspections')]/parent::th/parent::tr/parent::thead/parent::table/tbody/tr[1]/td[1]").text
-                            if FooterCount == "No items available":
+                                                              "//span[contains(text(),'Inspections Requiring Action')]/parent::h2/parent::div/div/div/div/div[2]/div[2]/div/div[2]/div[1]/table/thead/tr/th[2]/div[contains(text(),'Inspections')]/parent::th/parent::tr/parent::thead/parent::table/tbody/tr[1]/td[1]").text
+                            if "No" or "no" in FooterCount:
+                                print("No found, so count is 0")
                                 FooterCount = "0"
-                            else:
-                                FooterCount = "No Count"
                         except:
                             print("444")
                             FooterCount = driver.find_elements(By.XPATH,
-                                                               "//span[contains(text(),'Properties With Open Work')]/parent::h2/parent::div/div/div/div/div[2]/div[2]/div/div[2]/div[1]/table/tbody/tr")
+                                                               "//span[contains(text(),'Inspections Requiring Action')]/parent::h2/parent::div/div/div/div/div[2]/div[2]/div/div[2]/div[1]/table/tbody/tr")
                             FooterCount = str(len(FooterCount))
                 # -------------------Home Inspection Click------------------------------
                 ElementVerify = "Inspection link text click for " + ElementVerify
@@ -526,6 +523,7 @@ def test_AllModules(test_setup):
                 print("No Data available **************** for " + ElementVerify)
                 FooterCount="0"
             # ---------------Matching Count for Work Order Required ---------------
+            ElementVerify = "Work Order Required Count"
             print("FooterCount is " + FooterCount)
             ElementFound = FooterCount
             if Count == ElementFound:
@@ -563,12 +561,12 @@ def test_AllModules(test_setup):
                 try:
                     print("11")
                     FooterCount = driver.find_element(By.XPATH,
-                                                      "//span[contains(text(),'Properties With Open Work')]/parent::h2/parent::div/div/div/div/div[2]/div[2]/div/div[2]/div[2]/div/div/span[2]/strong").text
+                                                      "//span[contains(text(),'Inspections Requiring Action')]/parent::h2/parent::div/div/div/div/div[2]/div[2]/div/div[2]/div[2]/div/div/span[2]/strong").text
                 except:
                     try:
                         print("22")
                         FooterCount = driver.find_element(By.XPATH,
-                                                          "//span[contains(text(),'Properties With Open Work')]/parent::h2/parent::div/div/div/div/div[2]/div[2]/div/div[2]/div[2]/div/div/span[3]").text
+                                                          "//span[contains(text(),'Inspections Requiring Action')]/parent::h2/parent::div/div/div/div/div[2]/div[2]/div/div[2]/div[2]/div/div/span[3]").text
                         start = 'of '
                         end = ''
                         FooterCount = FooterCount[FooterCount.find(start) + len(start):FooterCount.rfind(end)]
@@ -576,15 +574,14 @@ def test_AllModules(test_setup):
                         try:
                             print("333")
                             FooterCount = driver.find_element(By.XPATH,
-                                                              "//span[contains(text(),'Properties With Open Work')]/parent::h2/parent::div/div/div/div/div[2]/div[2]/div/div[2]/div[1]/table/thead/tr/th[2]/div[contains(text(),'Inspections')]/parent::th/parent::tr/parent::thead/parent::table/tbody/tr[1]/td[1]").text
-                            if FooterCount == "No items available":
+                                                              "//span[contains(text(),'Inspections Requiring Action')]/parent::h2/parent::div/div/div/div/div[2]/div[2]/div/div[2]/div[1]/table/thead/tr/th[2]/div[contains(text(),'Inspections')]/parent::th/parent::tr/parent::thead/parent::table/tbody/tr[1]/td[1]").text
+                            if "No" or "no" in FooterCount:
+                                print("No found, so count is 0")
                                 FooterCount = "0"
-                            else:
-                                FooterCount = "No Count"
                         except:
                             print("444")
                             FooterCount = driver.find_elements(By.XPATH,
-                                                               "//span[contains(text(),'Properties With Open Work')]/parent::h2/parent::div/div/div/div/div[2]/div[2]/div/div[2]/div[1]/table/tbody/tr")
+                                                               "//span[contains(text(),'Inspections Requiring Action')]/parent::h2/parent::div/div/div/div/div[2]/div[2]/div/div[2]/div[1]/table/tbody/tr")
                             FooterCount = str(len(FooterCount))
                 # -------------------Home Inspection Click------------------------------
                 ElementVerify = "Inspection link text click for " + ElementVerify
@@ -602,6 +599,7 @@ def test_AllModules(test_setup):
                 print("No Data available **************** for " + ElementVerify)
                 FooterCount="0"
             # ---------------Matching Count for Sign Off Required ---------------
+            ElementVerify = "Sign Off Required Count"
             print("FooterCount is " + FooterCount)
             ElementFound = FooterCount
             if Count == ElementFound:
@@ -639,12 +637,12 @@ def test_AllModules(test_setup):
                 try:
                     print("11")
                     FooterCount = driver.find_element(By.XPATH,
-                                                      "//span[contains(text(),'Properties With Open Work')]/parent::h2/parent::div/div/div/div/div[2]/div[2]/div/div[2]/div[2]/div/div/span[2]/strong").text
+                                                      "//span[contains(text(),'Inspections Requiring Action')]/parent::h2/parent::div/div/div/div/div[2]/div[2]/div/div[2]/div[2]/div/div/span[2]/strong").text
                 except:
                     try:
                         print("22")
                         FooterCount = driver.find_element(By.XPATH,
-                                                          "//span[contains(text(),'Properties With Open Work')]/parent::h2/parent::div/div/div/div/div[2]/div[2]/div/div[2]/div[2]/div/div/span[3]").text
+                                                          "//span[contains(text(),'Inspections Requiring Action')]/parent::h2/parent::div/div/div/div/div[2]/div[2]/div/div[2]/div[2]/div/div/span[3]").text
                         start = 'of '
                         end = ''
                         FooterCount = FooterCount[FooterCount.find(start) + len(start):FooterCount.rfind(end)]
@@ -652,15 +650,14 @@ def test_AllModules(test_setup):
                         try:
                             print("333")
                             FooterCount = driver.find_element(By.XPATH,
-                                                              "//span[contains(text(),'Properties With Open Work')]/parent::h2/parent::div/div/div/div/div[2]/div[2]/div/div[2]/div[1]/table/thead/tr/th[2]/div[contains(text(),'Inspections')]/parent::th/parent::tr/parent::thead/parent::table/tbody/tr[1]/td[1]").text
-                            if FooterCount == "No items available":
+                                                              "//span[contains(text(),'Inspections Requiring Action')]/parent::h2/parent::div/div/div/div/div[2]/div[2]/div/div[2]/div[1]/table/thead/tr/th[2]/div[contains(text(),'Inspections')]/parent::th/parent::tr/parent::thead/parent::table/tbody/tr[1]/td[1]").text
+                            if "No" or "no" in FooterCount:
+                                print("No found, so count is 0")
                                 FooterCount = "0"
-                            else:
-                                FooterCount = "No Count"
                         except:
                             print("444")
                             FooterCount = driver.find_elements(By.XPATH,
-                                                               "//span[contains(text(),'Properties With Open Work')]/parent::h2/parent::div/div/div/div/div[2]/div[2]/div/div[2]/div[1]/table/tbody/tr")
+                                                               "//span[contains(text(),'Inspections Requiring Action')]/parent::h2/parent::div/div/div/div/div[2]/div[2]/div/div[2]/div[1]/table/tbody/tr")
                             FooterCount = str(len(FooterCount))
                 # -------------------Home Inspection Click------------------------------
                 ElementVerify = "Inspection link text click for " + ElementVerify
@@ -679,6 +676,7 @@ def test_AllModules(test_setup):
                 print("No Data available **************** for " + ElementVerify)
                 FooterCount="0"
             # ---------------Matching Count for Finalization Required ---------------
+            ElementVerify = "Finalization Required Count"
             print("FooterCount is " + FooterCount)
             ElementFound = FooterCount
             if Count == ElementFound:
@@ -720,5 +718,3 @@ def test_AllModules(test_setup):
                 sheet.cell(row=i, column=5).value = "Skipped"
                 wb.save(loc)
         # ----------------------------------------------------------------------------
-# if __name__=='__main__':
-#     test_setup()

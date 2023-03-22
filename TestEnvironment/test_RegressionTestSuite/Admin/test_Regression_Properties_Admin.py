@@ -219,9 +219,9 @@ def test_AllModules(test_setup):
                                                    ElementExpected,
                                                    ElementVerify,
                                                    PageName, TestResult, TestResultStatus)
-                #driver.find_element(By.XPATH, "//button[contains(text(),'Cancel')]").click()
+                driver.find_element(By.XPATH, "//button[contains(text(),'Cancel')]").click()
                 try:
-                    driver.find_element(By.XPATH, "//button[contains(text(),'Submit')]").click()
+                    #driver.find_element(By.XPATH, "//button[contains(text(),'Submit')]").click()
                     TestResult.append("New property [ " + DataReadMaster.GlobalDataForm(MdataSheetTab,"NameOfProperty$Str") + " ] was added successfully")
                     TestResultStatus.append("Pass")
                 except Exception:

@@ -3,9 +3,9 @@ import openpyxl
 import socket
 class DataReadMaster:
     ROOT_DIR = None
-    print(socket.gethostname())
-    if socket.gethostname()=="DESKTOP-KMS7763":
-        ROOT_DIR = "C:/Users/gagandeep.singh_bits/PythonWorkSpace/MIMORepo/"
+    #print(socket.gethostname())
+    if socket.gethostname()=="LAPTOP-US9BAVU1":
+        ROOT_DIR = "C:/Users/Neeraj Kumar/PycharmProjects/MIMORepo/"
     if socket.gethostname() == "DESKTOP-JLLTS65":
         ROOT_DIR = "C:/Users/Neeraj/PycharmProjects/MIMO/"
     newPath = ROOT_DIR.replace(os.sep, '/')
