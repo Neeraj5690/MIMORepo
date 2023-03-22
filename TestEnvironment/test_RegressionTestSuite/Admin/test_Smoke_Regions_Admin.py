@@ -1,7 +1,4 @@
 import datetime
-import sys
-if "C:/Users/Neeraj/PycharmProjects/MIMO" not in sys.path:
-    sys.path.append("C:/Users/Neeraj/PycharmProjects/MIMO")
 import time
 import openpyxl
 from fpdf import FPDF
@@ -14,6 +11,7 @@ from TestEnvironment.GlobalClassMethods.MasterDataExcelReader import DataReadMas
 from TestEnvironment.GlobalElementAction.ElementAction import ElementActionCls
 from TestEnvironment.GlobalElementAction.SafeToElementAction import SafeToElementActionCls, SafeToVerify
 from TestEnvironment.GlobalElementPresent.ElementPresent import ElementPresentCls
+from TestEnvironment.GlobalErrorPresent.ErrorPresent import ErrorPresentCls
 from TestEnvironment.GlobalLoader.Loader import LoaderCls
 
 @allure.step("Entering username ")
@@ -23,7 +21,6 @@ def enter_username(username):
 @allure.step("Entering password ")
 def enter_password(password):
     driver.find_element(By.ID, "pw").send_keys(password)
-
 
 @pytest.fixture()
 def test_setup():
@@ -35,9 +32,7 @@ def test_setup():
     FailStatus = "Pass"
     Exe = "Yes"
 
-    path = DataReadMaster.Path + DataReadMaster.GlobalData("test_Smoke_Home_Vendor",
-                                                           "ParentDirectory") + DataReadMaster.GlobalData(
-        "test_Smoke_Home_Vendor", "Directory") + DataReadMaster.GlobalData("test_Smoke_Home_Vendor", "SubDirectory")
+    path = DataReadMaster.Path + DataReadMaster.GlobalData("test_Smoke_Regions_Admin", "ParentDirectory") +DataReadMaster.GlobalData("test_Smoke_Regions_Admin", "Directory") + DataReadMaster.GlobalData("test_Smoke_Regions_Admin", "SubDirectory")
     FundNameList = []
     FundNameListAfterRemove = []
 
@@ -51,7 +46,7 @@ def test_setup():
     DollarDate = "$" + DollarDate.date().__str__() + "$"
     d1 = datetime.datetime.strptime(D1, "%Y-%m-%d")
 
-    Exe = DataReadMaster.GlobalData("test_Smoke_Home_Vendor", "Execution")
+    Exe = DataReadMaster.GlobalData("test_Smoke_Regions_Admin", "Execution")
 
     # --------Login to the application-----------------------
     if Exe == "Yes":
@@ -59,9 +54,9 @@ def test_setup():
         driver = webdriver.Chrome(executable_path=ChromeCls.NewChromePath1ChrCls)
         driver.implicitly_wait(10)
         driver.maximize_window()
-        driver.get(DataReadMaster.GlobalData("GlobalData", "URLVendor"))
-        enter_username(DataReadMaster.GlobalData("GlobalData", "VendorUsername"))
-        enter_password(DataReadMaster.GlobalData("GlobalData", "VendorPassword"))
+        driver.get(DataReadMaster.GlobalData("GlobalData", "URL1"))
+        enter_username(DataReadMaster.GlobalData("GlobalData", "AdminUsername"))
+        enter_password(DataReadMaster.GlobalData("GlobalData", "AdminPassword"))
         driver.find_element(By.XPATH, DataReadMaster.GlobalData("GlobalData", "LoginSubmit")).click()
 
     yield
@@ -88,9 +83,9 @@ def test_setup():
         pdf.alias_nb_pages()
         pdf.add_page()
         pdf.set_font('Times', '', 12)
-        pdf.cell(0, 10, "Test Case Name:  " + DataReadMaster.GlobalData("test_Smoke_Home_Vendor", "PDFTestName"), 0, 1)
+        pdf.cell(0, 10, "Test Case Name:  " + DataReadMaster.GlobalData("test_Smoke_Regions_Admin", "PDFTestName"), 0, 1)
         pdf.multi_cell(0, 10,
-                       "Description:  " + DataReadMaster.GlobalData("test_Smoke_Home_Vendor", "PDFDescription"), 0, 1)
+                       "Description:  " + DataReadMaster.GlobalData("test_Smoke_Regions_Admin", "PDFDescription"), 0, 1)
         for i1 in range(len(TestResult)):
             pdf.set_fill_color(255, 255, 255)
             pdf.set_text_color(0, 0, 0)
@@ -101,7 +96,7 @@ def test_setup():
             TestName1 = TestResult[i1].encode('latin-1', 'ignore').decode('latin-1')
             pdf.multi_cell(0, 7, str(i1 + 1) + ")  " + TestName1, 0, 1, fill=True)
             TestFailStatus.append("Pass")
-        pdf.output(DataReadMaster.GlobalData("test_Smoke_Home_Vendor", "TestName") + "_" + ct + ".pdf")
+        pdf.output(DataReadMaster.GlobalData("test_Smoke_Regions_Admin", "TestName") + "_" + ct + ".pdf")
 
         # -----------To check if any failed Test case present-------------------
         for io in range(len(TestResult)):
@@ -115,8 +110,8 @@ def test_setup():
         wb = openpyxl.load_workbook(loc)
         sheet = wb.active
         print()
-        check = DataReadMaster.GlobalData("test_Smoke_Home_Vendor", "TestName")
-        PdfName = DataReadMaster.GlobalData("test_Smoke_Home_Vendor", "TestName") + "_" + ct + ".pdf"
+        check = DataReadMaster.GlobalData("test_Smoke_Regions_Admin", "TestName")
+        PdfName = DataReadMaster.GlobalData("test_Smoke_Regions_Admin", "TestName") + "_" + ct + ".pdf"
         checkcount = 0
 
         for i in range(1, 100):
@@ -124,9 +119,9 @@ def test_setup():
                 if checkcount == 0:
                     sheet.cell(row=i, column=1).value = check
                     sheet.cell(row=i, column=2).value = PdfName
-                    sheet.cell(row=i, column=3).value = DataReadMaster.GlobalData("test_Smoke_Home_Vendor",
+                    sheet.cell(row=i, column=3).value = DataReadMaster.GlobalData("test_Smoke_Regions_Admin",
                                                                                   "TestDirectoryName")
-                    sheet.cell(row=i, column=4).value = DataReadMaster.GlobalData("test_Smoke_Home_Vendor",
+                    sheet.cell(row=i, column=4).value = DataReadMaster.GlobalData("test_Smoke_Regions_Admin",
                                                                                   "PDFDescription")
                     sheet.cell(row=i, column=5).value = FailStatus
                     checkcount = 1
@@ -136,9 +131,9 @@ def test_setup():
                 if sheet.cell(i, 1).value == check:
                     if checkcount == 0:
                         sheet.cell(row=i, column=2).value = PdfName
-                        sheet.cell(row=i, column=3).value = DataReadMaster.GlobalData("test_Smoke_Home_Vendor",
+                        sheet.cell(row=i, column=3).value = DataReadMaster.GlobalData("test_Smoke_Regions_Admin",
                                                                                       "TestDirectoryName")
-                        sheet.cell(row=i, column=4).value = DataReadMaster.GlobalData("test_Smoke_Home_Vendor",
+                        sheet.cell(row=i, column=4).value = DataReadMaster.GlobalData("test_Smoke_Regions_Admin",
                                                                                       "PDFDescription")
                         sheet.cell(row=i, column=5).value = FailStatus
                         checkcount = 1
@@ -166,114 +161,64 @@ def test_setup():
         # -----------------------------------------------------------------------------
         driver.quit()
 
-
 @pytest.mark.smoke
 def test_AllModules(test_setup):
     if Exe == "Yes":
         try:
-            # ---------------------------Verify Home page-----------------------------
-            PageName = "Home"
-            Ptitle1 = "Home - PI - Vendor"
-            print(driver.title)
-            time.sleep(1)
+            # --------------------Checking Page--------------
+            LoaderCls.LoaderMeth(driver)
+            PageName = DataReadMaster.GlobalData("test_Smoke_Regions_Admin", "PageName")
+            driver.find_element(By.XPATH, DataReadMaster.GlobalData("test_Smoke_Regions_Admin", "RecordsTab")).click()
+            LoaderCls.LoaderMeth(driver)
+            driver.find_element(By.XPATH, DataReadMaster.GlobalData("test_Smoke_Regions_Admin", "PageLink")).click()
             LoaderCls.LoaderMeth(driver)
             try:
-                PageTitle1 = driver.title
-                assert PageTitle1 in Ptitle1, PageName + " module was not able to open"
+                driver.find_element(By.XPATH,DataReadMaster.GlobalData("test_Smoke_Regions_Admin", "PageText")).is_displayed()
                 TestResult.append(PageName + " module opened successfully")
                 TestResultStatus.append("Pass")
-            except Exception:
-                TestResult.append(PageName + " module was not able to open")
+            except Exception as e1:
+                print(e1)
+                TestResult.append(PageName + " module was not able to open ")
                 TestResultStatus.append("Fail")
 
-            # -----------------------Checking Elements at Home----------------------
-            # -------------------Open Work Orders Section------------------------------
-            LoaderCls.LoaderMeth(driver)
-            driver.find_element(By.XPATH,
-                                DataReadMaster.GlobalData("test_Smoke_Home_Vendor", "HomePage")).click()
-            ElementVerify = "Open Work Orders section"
-            PageName = "Home"
-            ElementExpected = "Open Work Orders"
-            MdataSheetTab = "test_Smoke_Home_Vendor"
-            MdataSheetItem = "OpenWorkOrdersSection"
-            ElementPresentCls.ElementPresentMeth(driver, MdataSheetTab, MdataSheetItem, ElementExpected, ElementVerify,
-                                                 PageName, TestResult, TestResultStatus)
-
-            # --------------------Different BUTTONS at Home------------------------
-            # -------------------Pending Work Orders Button------------------------------
-            ElementVerify = "Pending Work Orders Button"
-            PageName = "Home"
-            MdataSheetTab = "test_Smoke_Home_Vendor"
-            MdataSheetItem = "PendingWorkOrdersButton"
-            MdataSheetItem2 = "PendingWorkOrdersButtonText"
-            ElementExpected = "ID"
-            ElementActionCls.ElementActionMeth(driver, MdataSheetTab, MdataSheetItem, MdataSheetItem2, ElementExpected,
-                                               ElementVerify,
-                                               PageName, TestResult, TestResultStatus)
-            SafeToClick = SafeToElementActionCls.SafeToElementActionMeth(driver, SafeToVerify, "test_Smoke_Home_Vendor",
-                                                                         "SafeToPendingWorkOrdersClick")
-            print("SafeToClick is "+SafeToClick)
-            if SafeToClick == "Yes":
-                # -------------------Work OrderID Click------------------------------
-                Element = "Work Order ID"
-                Click_Element = "WorkOrdersID_PendWO_Ele"
-                if Click_Element == "Skip":
-                    ElementVerify = Element + " click for " + ElementVerify
-                else:
-                    ElementID = driver.find_element(By.XPATH,
-                                                    DataReadMaster.GlobalData(MdataSheetTab, Click_Element)).text
-                    ElementVerify = Element + " [ " + ElementID + " ] click for " + ElementVerify
-
-                PageName = "Home"
-                MdataSheetTab = "test_Smoke_Home_Vendor"
-                MdataSheetItem = "WorkOrdersIDClick"
-                MdataSheetItem2 = "WorkOrdersIDClick1Text"
-                ElementExpected = "Work Order Details"
-                ElementActionCls.ElementActionMeth(driver, MdataSheetTab, MdataSheetItem, MdataSheetItem2,
-                                                   ElementExpected,
-                                                   ElementVerify,
-                                                   PageName, TestResult, TestResultStatus)
-            else:
-                print("No Data available **************** for " + ElementVerify)
-            driver.find_element(By.XPATH, "//a/div[contains(text(),'Home')]").click()
-
-            # -------------------In-Progress Work Orders Button------------------------------
-            ElementVerify = "In-Progress Work Orders Button"
-            PageName = "Home"
-            MdataSheetTab = "test_Smoke_Home_Vendor"
-            MdataSheetItem = "InProgressWorkOrdersButton"
-            MdataSheetItem2 = "InProgressWorkOrdersButtonText"
-            ElementExpected = "ID"
+            # -------------------Add New Region Button------------------------------
+            ElementVerify = "Add New Region Button"
+            PageName = DataReadMaster.GlobalData("test_Smoke_Properties_Admin", "PageName")
+            MdataSheetTab = "test_Smoke_Regions_Admin"
+            MdataSheetItem = "AddNewRegionButton"
+            MdataSheetItem2 = "AddNewRegionButtonText"
+            ElementExpected = "Create Region"
             ElementActionCls.ElementActionMeth(driver, MdataSheetTab, MdataSheetItem, MdataSheetItem2,
                                                ElementExpected,
                                                ElementVerify,
                                                PageName, TestResult, TestResultStatus)
-            SafeToClick = SafeToElementActionCls.SafeToElementActionMeth(driver, SafeToVerify,
-                                                                         "test_Smoke_Home_Vendor",
-                                                                         "SafeToInProgressWorkOrdersButtonClick")
-            print("SafeToClick is "+SafeToClick)
+            driver.find_element(By.XPATH, "//button[contains(text(),'Cancel')]").click()
+
+            # -------------------Region Link Text------------------------------
+            MdataSheetTab = "test_Smoke_Regions_Admin"
+            MdataSheetItem = "SafeToRegionLinkText"
+            SafeToClick = SafeToElementActionCls.SafeToElementActionMeth(driver, SafeToVerify, MdataSheetTab,
+                                                                         MdataSheetItem)
+            ElementVerify = "Region Link Text click"
             if SafeToClick == "Yes":
-                # -------------------Work OrderID Click------------------------------
-                Element="Work Order ID"
-                Click_Element = "WorkOrdersID_InProgWO_Ele"
-                if Click_Element == "Skip":
-                    ElementVerify = Element+" click for " + ElementVerify
-                else:
-                    ElementID = driver.find_element(By.XPATH,
-                                                    DataReadMaster.GlobalData(MdataSheetTab, Click_Element)).text
-                    ElementVerify = Element+" [ " + ElementID + " ] click for " + ElementVerify
-                PageName = "Home"
-                MdataSheetTab = "test_Smoke_Home_Vendor"
-                MdataSheetItem = "WorkOrdersIDClick"
-                MdataSheetItem2 = "WorkOrdersIDClick2Text"
-                ElementExpected = "Work Order Details"
+                # -------------------Inspection ID Link Text Click------------------------------
+                PageName = DataReadMaster.GlobalData("test_Smoke_Regions_Admin", "PageName")
+                MdataSheetTab = "test_Smoke_Regions_Admin"
+                MdataSheetItem = "RegionLink"
+                MdataSheetItem2 = "RegionLinkText"
+                ElementExpected = "Details"
                 ElementActionCls.ElementActionMeth(driver, MdataSheetTab, MdataSheetItem, MdataSheetItem2,
-                                                               ElementExpected,
-                                                               ElementVerify,
-                                                               PageName, TestResult, TestResultStatus)
+                                                   ElementExpected,
+                                                   ElementVerify,
+                                                   PageName, TestResult, TestResultStatus)
+                driver.find_element(By.XPATH, DataReadMaster.GlobalData("test_Smoke_Regions_Admin", "RecordsTab")).click()
+                LoaderCls.LoaderMeth(driver)
+                driver.find_element(By.XPATH, DataReadMaster.GlobalData("test_Smoke_Regions_Admin", "PageLink")).click()
+                LoaderCls.LoaderMeth(driver)
+
             else:
                 print("No Data available **************** for " + ElementVerify)
-            driver.find_element(By.XPATH, "//a/div[contains(text(),'Home')]").click()
+
 
         except Exception as Mainerror:
             print(Mainerror)
@@ -281,19 +226,20 @@ def test_AllModules(test_setup):
             if stringMainerror in "InvalidSessionIdException('invalid session id', None, None)":
                 pass
             else:
-                TestResult.append(stringMainerror)
+                TestResult.append(stringMainerror + " - "+DataReadMaster.GlobalData("test_Smoke_Regions_Admin", "PageName")+" section was not able to open by automated script. Execution terminated for all other test cases")
                 TestResultStatus.append("Fail")
 
     else:
         print()
         print("Test Case skipped as per the Execution sheet")
         skip = "Yes"
+
         # -----------To add Skipped test case details in PDF details sheet-------------
         ExcelFileName = "FileName"
         loc = (path + 'PDFFileNameData/' + ExcelFileName + '.xlsx')
         wb = openpyxl.load_workbook(loc)
         sheet = wb.active
-        check = DataReadMaster.GlobalData("test_Smoke_Home_Vendor", "TestName")
+        check = DataReadMaster.GlobalData("test_Smoke_Regions_Admin", "TestName")
 
         for i in range(1, 100):
             if sheet.cell(i, 1).value == check:

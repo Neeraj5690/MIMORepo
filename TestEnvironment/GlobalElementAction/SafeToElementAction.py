@@ -14,11 +14,12 @@ class SafeToElementActionCls:
                                                                          MdataSheetItem)).text
             #print("IfElementFound is "+IfElementFound)
             if "no" in IfElementFound:
-                #print("Nooooo")
+                SafeToVerify = "No"
+                return SafeToVerify
+            elif "No" in IfElementFound:
                 SafeToVerify = "No"
                 return SafeToVerify
             else:
-                #print("Yesss")
                 SafeToVerify = "Yes"
                 return SafeToVerify
         except Exception as e1:

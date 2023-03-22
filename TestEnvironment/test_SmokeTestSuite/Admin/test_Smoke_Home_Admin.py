@@ -203,492 +203,496 @@ def test_AllModules(test_setup):
             ElementPresentCls.ElementPresentMeth(driver, MdataSheetTab, MdataSheetItem, ElementExpected, ElementVerify,
                                                  PageName, TestResult, TestResultStatus)
 
-            # # -------------------Inspections Completed Graph------------------------------
-            # ElementVerify = "Inspections Completed Graph"
-            # PageName = "Home"
-            # ElementExpected = "Completed"
-            # MdataSheetTab = "test_Smoke_Home_Admin"
-            # MdataSheetItem = "InspectionsGraphCompleted"
-            # ElementPresentCls.ElementPresentMeth(driver, MdataSheetTab, MdataSheetItem, ElementExpected, ElementVerify,
-            #                                      PageName, TestResult, TestResultStatus)
-            #
-            # # -------------------Work Orders New Graph------------------------------
-            # ElementVerify = "Work Orders New Graph"
-            # PageName = "Home"
-            # ElementExpected = "New"
-            # MdataSheetTab = "test_Smoke_Home_Admin"
-            # MdataSheetItem = "WorkOrdersGraphNew"
-            # ElementPresentCls.ElementPresentMeth(driver, MdataSheetTab, MdataSheetItem, ElementExpected, ElementVerify,
-            #                                      PageName, TestResult, TestResultStatus)
-            #
-            # # -------------------Work Orders Completed Graph------------------------------
-            # ElementVerify = "Work Orders Completed Graph"
-            # PageName = "Home"
-            # ElementExpected = "Completed"
-            # MdataSheetTab = "test_Smoke_Home_Admin"
-            # MdataSheetItem = "WorkOrdersGraphCompleted"
-            # ElementPresentCls.ElementPresentMeth(driver, MdataSheetTab, MdataSheetItem, ElementExpected, ElementVerify,
-            #                                      PageName, TestResult, TestResultStatus)
-            #
-            # # --------------------Properties With Open Work BUTTONS------------------------
-            # # -------------------Incomplete Inspections Button------------------------------
-            # ElementVerify = "Incomplete Inspections Button"
-            # PageName = "Home"
-            # MdataSheetTab = "test_Smoke_Home_Admin"
-            # MdataSheetItem = "IncompleteInspectionsButton"
-            # MdataSheetItem2 = "IncompleteInspectionsButtonText"
-            # ElementExpected = "Inspections"
-            # ElementActionCls.ElementActionMeth(driver, MdataSheetTab, MdataSheetItem, MdataSheetItem2, ElementExpected,
-            #                                    ElementVerify,
-            #                                    PageName, TestResult, TestResultStatus)
-            # SafeToClick = SafeToElementActionCls.SafeToElementActionMeth(driver, SafeToVerify, "test_Smoke_Home_Admin",
-            #                                                              "SafeToIncompleteInspectionsClick")
-            # if SafeToClick == "Yes":
-            #     # -------------------Home Property Click------------------------------
-            #     ElementVerify = "Property link text click for " + ElementVerify
-            #     PageName = "Home"
-            #     MdataSheetTab = "test_Smoke_Home_Admin"
-            #     MdataSheetItem = "HomePropertyClick"
-            #     MdataSheetItem2 = "HomePropertyClickText"
-            #     ElementExpected = "Property Information"
-            #     ElementActionCls.ElementActionMeth(driver, MdataSheetTab, MdataSheetItem, MdataSheetItem2,
-            #                                        ElementExpected,
-            #                                        ElementVerify,
-            #                                        PageName, TestResult, TestResultStatus)
-            #     driver.find_element(By.XPATH, "//a/div[contains(text(),'Home')]").click()
-            # else:
-            #     print("No Data available **************** for " + ElementVerify)
-            # # -------------------Pending Inspections Button------------------------------
-            # ElementVerify = "Pending Inspections Button"
-            # PageName = "Home"
-            # MdataSheetTab = "test_Smoke_Home_Admin"
-            # MdataSheetItem = "PendingInspectionsButton"
-            # MdataSheetItem2 = "PendingInspectionsButtonText"
-            # ElementExpected = "Inspections"
-            # ElementActionCls.ElementActionMeth(driver, MdataSheetTab, MdataSheetItem, MdataSheetItem2, ElementExpected,
-            #                                    ElementVerify,
-            #                                    PageName, TestResult, TestResultStatus)
-            # SafeToClick = SafeToElementActionCls.SafeToElementActionMeth(driver, SafeToVerify, "test_Smoke_Home_Admin",
-            #                                                              "SafeToPendingInspectionsClick")
-            # if SafeToClick == "Yes":
-            #     # -------------------Home Property Click------------------------------
-            #     ElementVerify = "Property link text click for " + ElementVerify
-            #     PageName = "Home"
-            #     MdataSheetTab = "test_Smoke_Home_Admin"
-            #     MdataSheetItem = "HomePropertyClick"
-            #     MdataSheetItem2 = "HomePropertyClickText"
-            #     ElementExpected = "Property Information"
-            #     ElementActionCls.ElementActionMeth(driver, MdataSheetTab, MdataSheetItem, MdataSheetItem2,
-            #                                        ElementExpected,
-            #                                        ElementVerify,
-            #                                        PageName, TestResult, TestResultStatus)
-            #     driver.find_element(By.XPATH, "//a/div[contains(text(),'Home')]").click()
-            # else:
-            #     print("No Data available **************** for " + ElementVerify)
-            # # -------------------Open Work Orders Button------------------------------
-            # ElementVerify = "Open Work Orders Button"
-            # PageName = "Home"
-            # MdataSheetTab = "test_Smoke_Home_Admin"
-            # MdataSheetItem = "OpenWorkOrdersButton"
-            # MdataSheetItem2 = "OpenWorkOrdersButtonText"
-            # ElementExpected = "Work Orders"
-            # ElementActionCls.ElementActionMeth(driver, MdataSheetTab, MdataSheetItem, MdataSheetItem2, ElementExpected,
-            #                                    ElementVerify,
-            #                                    PageName, TestResult, TestResultStatus)
-            # SafeToClick = SafeToElementActionCls.SafeToElementActionMeth(driver, SafeToVerify, "test_Smoke_Home_Admin",
-            #                                                              "SafeToOpenWorkOrdersClick")
-            # if SafeToClick == "Yes":
-            #     # -------------------Home Property Click------------------------------
-            #     ElementVerify = "Property link text click for " + ElementVerify
-            #     PageName = "Home"
-            #     MdataSheetTab = "test_Smoke_Home_Admin"
-            #     MdataSheetItem = "HomePropertyClick"
-            #     MdataSheetItem2 = "HomePropertyClickText"
-            #     ElementExpected = "Property Information"
-            #     ElementActionCls.ElementActionMeth(driver, MdataSheetTab, MdataSheetItem, MdataSheetItem2,
-            #                                        ElementExpected,
-            #                                        ElementVerify,
-            #                                        PageName, TestResult, TestResultStatus)
-            #     driver.find_element(By.XPATH, "//a/div[contains(text(),'Home')]").click()
-            # else:
-            #     print("No Data available **************** for " + ElementVerify)
-            #
-            # # --------------------Inspections Requiring Action BUTTONS------------------------
-            # # -------------------Work Order Required Button------------------------------
-            # ElementVerify = "Work Order Required Button"
-            # PageName = "Home"
-            # MdataSheetTab = "test_Smoke_Home_Admin"
-            # MdataSheetItem = "WorkOrderRequiredButton"
-            # MdataSheetItem2 = "WorkOrderRequiredButtonText"
-            # ElementExpected = "Inspection Type"
-            # ElementActionCls.ElementActionMeth(driver, MdataSheetTab, MdataSheetItem, MdataSheetItem2, ElementExpected,
-            #                                    ElementVerify,
-            #                                    PageName, TestResult, TestResultStatus)
-            # SafeToClick = SafeToElementActionCls.SafeToElementActionMeth(driver, SafeToVerify, "test_Smoke_Home_Admin",
-            #                                                              "SafeToWorkOrderRequiredClick")
-            # if SafeToClick == "Yes":
-            #     # -------------------Home Inspection Click------------------------------
-            #     ElementVerify = "Inspection link text click for " + ElementVerify
-            #     PageName = "Home"
-            #     MdataSheetTab = "test_Smoke_Home_Admin"
-            #     MdataSheetItem = "HomeInspectionClick"
-            #     MdataSheetItem2 = "HomeInspectionClickText"
-            #     ElementExpected = "Inspection Date"
-            #     ElementActionCls.ElementActionMeth(driver, MdataSheetTab, MdataSheetItem, MdataSheetItem2,
-            #                                        ElementExpected,
-            #                                        ElementVerify,
-            #                                        PageName, TestResult, TestResultStatus)
-            #     driver.find_element(By.XPATH, "//a/div[contains(text(),'Home')]").click()
-            # else:
-            #     print("No Data available **************** for " + ElementVerify)
-            #
-            # # -------------------Sign off Required Button------------------------------
-            # ElementVerify = "Sign Off Required Button"
-            # PageName = "Home"
-            # MdataSheetTab = "test_Smoke_Home_Admin"
-            # MdataSheetItem = "SignOffRequiredButton"
-            # MdataSheetItem2 = "SignOffRequiredButtonText"
-            # ElementExpected = "Inspection Type"
-            # ElementActionCls.ElementActionMeth(driver, MdataSheetTab, MdataSheetItem, MdataSheetItem2, ElementExpected,
-            #                                    ElementVerify,
-            #                                    PageName, TestResult, TestResultStatus)
-            # SafeToClick = SafeToElementActionCls.SafeToElementActionMeth(driver, SafeToVerify, "test_Smoke_Home_Admin",
-            #                                                              "SafeToSignOffRequiredClick")
-            # if SafeToClick == "Yes":
-            #     # -------------------Home Inspection Click------------------------------
-            #     ElementVerify = "Inspection link text click for " + ElementVerify
-            #     PageName = "Home"
-            #     MdataSheetTab = "test_Smoke_Home_Admin"
-            #     MdataSheetItem = "HomeInspectionClick"
-            #     MdataSheetItem2 = "HomeInspectionClickText"
-            #     ElementExpected = "Inspection Date"
-            #     ElementActionCls.ElementActionMeth(driver, MdataSheetTab, MdataSheetItem, MdataSheetItem2,
-            #                                        ElementExpected,
-            #                                        ElementVerify,
-            #                                        PageName, TestResult, TestResultStatus)
-            #     driver.find_element(By.XPATH, "//a/div[contains(text(),'Home')]").click()
-            # else:
-            #     print("No Data available **************** for " + ElementVerify)
-            #
-            # # -------------------Finalization Required Button------------------------------
-            # ElementVerify = "Finalization Required Button"
-            # PageName = "Home"
-            # MdataSheetTab = "test_Smoke_Home_Admin"
-            # MdataSheetItem = "FinalizationRequiredButton"
-            # MdataSheetItem2 = "FinalizationRequiredButtonText"
-            # ElementExpected = "Inspection Type"
-            # ElementActionCls.ElementActionMeth(driver, MdataSheetTab, MdataSheetItem, MdataSheetItem2, ElementExpected,
-            #                                    ElementVerify,
-            #                                    PageName, TestResult, TestResultStatus)
-            # SafeToClick = SafeToElementActionCls.SafeToElementActionMeth(driver, SafeToVerify, "test_Smoke_Home_Admin",
-            #                                                              "SafeToFinalizationRequiredClick")
-            # if SafeToClick=="Yes":
-            #     # -------------------Home Inspection Click------------------------------
-            #     ElementVerify = "Inspection link text click for " + ElementVerify
-            #     PageName = "Home"
-            #     MdataSheetTab = "test_Smoke_Home_Admin"
-            #     MdataSheetItem = "HomeInspectionClick"
-            #     MdataSheetItem2 = "HomeInspectionClickText"
-            #     ElementExpected = "Inspection Date"
-            #     ElementActionCls.ElementActionMeth(driver, MdataSheetTab, MdataSheetItem, MdataSheetItem2,
-            #                                        ElementExpected,
-            #                                        ElementVerify,
-            #                                        PageName, TestResult, TestResultStatus)
-            #     driver.find_element(By.XPATH, "//a/div[contains(text(),'Home')]").click()
-            #     LoaderCls.LoaderMeth(driver)
-            # else:
-            #     print("No Data available **************** for " + ElementVerify)
+            # -------------------Inspections Completed Graph------------------------------
+            ElementVerify = "Inspections Completed Graph"
+            PageName = "Home"
+            ElementExpected = "Completed"
+            MdataSheetTab = "test_Smoke_Home_Admin"
+            MdataSheetItem = "InspectionsGraphCompleted"
+            ElementPresentCls.ElementPresentMeth(driver, MdataSheetTab, MdataSheetItem, ElementExpected, ElementVerify,
+                                                 PageName, TestResult, TestResultStatus)
 
-            driver.find_element(By.XPATH, "//a/div[contains(text(),'Home')]").click()
-            # -------------------Incomplete Inspections Count------------------------------
-            driver.find_element(By.XPATH, "//button[contains(text(),'Incomplete Inspections')]").click()
-            LoaderCls.LoaderMeth(driver)
+            # -------------------Work Orders New Graph------------------------------
+            ElementVerify = "Work Orders New Graph"
+            PageName = "Home"
+            ElementExpected = "New"
+            MdataSheetTab = "test_Smoke_Home_Admin"
+            MdataSheetItem = "WorkOrdersGraphNew"
+            ElementPresentCls.ElementPresentMeth(driver, MdataSheetTab, MdataSheetItem, ElementExpected, ElementVerify,
+                                                 PageName, TestResult, TestResultStatus)
+
+            # -------------------Work Orders Completed Graph------------------------------
+            ElementVerify = "Work Orders Completed Graph"
+            PageName = "Home"
+            ElementExpected = "Completed"
+            MdataSheetTab = "test_Smoke_Home_Admin"
+            MdataSheetItem = "WorkOrdersGraphCompleted"
+            ElementPresentCls.ElementPresentMeth(driver, MdataSheetTab, MdataSheetItem, ElementExpected, ElementVerify,
+                                                 PageName, TestResult, TestResultStatus)
+
+            # --------------------Some Tab BUTTONS------------------------
+            # -------------------Incomplete Inspections Button------------------------------
+            ElementVerify = "Incomplete Inspections Button"
+            PageName = "Home"
+            MdataSheetTab = "test_Smoke_Home_Admin"
+            MdataSheetItem = "IncompleteInspectionsButton"
+            MdataSheetItem2 = "IncompleteInspectionsButtonText"
+            ElementExpected = "Inspections"
+            ElementActionCls.ElementActionMeth(driver, MdataSheetTab, MdataSheetItem, MdataSheetItem2, ElementExpected,
+                                               ElementVerify,
+                                               PageName, TestResult, TestResultStatus)
+            SafeToClick = SafeToElementActionCls.SafeToElementActionMeth(driver, SafeToVerify, "test_Smoke_Home_Admin",
+                                                                         "SafeToIncompleteInspectionsClick")
+            Count = driver.find_element(By.XPATH,
+                                        DataReadMaster.GlobalData("test_Smoke_Home_Admin", MdataSheetItem)).text
+            start = '('
+            end = ')'
+            Count = Count[Count.find(start) + len(start):Count.rfind(end)]
+            print("Count is " + Count)
+            if SafeToClick == "Yes":
+                # -------------------Incomplete Inspections Count------------------------------
+
+                try:
+                    print("11")
+                    FooterCount = driver.find_element(By.XPATH,
+                                                      "//aspan[contains(text(),'Properties With Open Work')]/parent::h2/parent::div/div/div/div/div[2]/div[2]/div/div[2]/div[2]/div/div/span[2]/strong").text
+                except:
+                    try:
+                        print("22")
+                        FooterCount = driver.find_element(By.XPATH,
+                                                          "//aspan[contains(text(),'Properties With Open Work')]/parent::h2/parent::div/div/div/div/div[2]/div[2]/div/div[2]/div[2]/div/div/span[3]").text
+                        start = 'of '
+                        end = ''
+                        FooterCount = FooterCount[FooterCount.find(start) + len(start):FooterCount.rfind(end)]
+                    except:
+                        try:
+                            print("333")
+                            FooterCount = driver.find_element(By.XPATH,
+                                                              "//aspan[contains(text(),'Properties With Open Work')]/parent::h2/parent::div/div/div/div/div[2]/div[2]/div/div[2]/div[1]/table/thead/tr/th[2]/div[contains(text(),'Inspections')]/parent::th/parent::tr/parent::thead/parent::table/tbody/tr[1]/td[1]").text
+                            if FooterCount == "No items available":
+                                FooterCount = "0"
+                            else:
+                                FooterCount = "No Count"
+                        except:
+                            print("444")
+                            FooterCount = driver.find_elements(By.XPATH,
+                                                              "//span[contains(text(),'Properties With Open Work')]/parent::h2/parent::div/div/div/div/div[2]/div[2]/div/div[2]/div[1]/table/tbody/tr")
+                            FooterCount=str(len(FooterCount))
+
+                # -------------------Home Property Click------------------------------
+                ElementVerify = "Property link text click for " + ElementVerify
+                PageName = "Home"
+                MdataSheetTab = "test_Smoke_Home_Admin"
+                MdataSheetItem = "HomePropertyClick"
+                MdataSheetItem2 = "HomePropertyClickText"
+                ElementExpected = "Property Information"
+                ElementActionCls.ElementActionMeth(driver, MdataSheetTab, MdataSheetItem, MdataSheetItem2,
+                                                   ElementExpected,
+                                                   ElementVerify,
+                                                   PageName, TestResult, TestResultStatus)
+                driver.find_element(By.XPATH, "//a/div[contains(text(),'Home')]").click()
+            else:
+                print("No Data available **************** for " + ElementVerify)
+                FooterCount="0"
+            #---------------Matching Count for Incomplete Inspections ---------------
             ElementVerify = "Incomplete Inspections Count"
-            PageName = "Home"
-            Count = driver.find_element(By.XPATH, "//button[contains(text(),'Incomplete Inspections')]").text
-            start = '('
-            end = ')'
-            Count = Count[Count.find(start) + len(start):Count.rfind(end)]
-            print("Count is " + Count)
-            ElementExpected = Count
-            try:
-                print("11")
-                FooterCount = driver.find_element(By.XPATH,
-                                                  "//span[contains(text(),'Properties With Open Work')]/parent::h2/parent::div/div/div/div/div[2]/div[2]/div/div[2]/div[2]/div/div/span[2]/strong").text
-            except:
-                try:
-                    print("22")
-                    FooterCount = driver.find_element(By.XPATH,
-                                                      "//span[contains(text(),'Properties With Open Work')]/parent::h2/parent::div/div/div/div/div[2]/div[2]/div/div[2]/div[2]/div/div/span[3]").text
-                    start = 'of '
-                    end = ''
-                    FooterCount = FooterCount[FooterCount.find(start) + len(start):FooterCount.rfind(end)]
-                except:
-                    print("333")
-                    FooterCount = driver.find_element(By.XPATH,
-                                                      "//span[contains(text(),'Properties With Open Work')]/parent::h2/parent::div/div/div/div/div[2]/div[2]/div/div[2]/div[1]/table/thead/tr/th[2]/div[contains(text(),'Inspections')]/parent::th/parent::tr/parent::thead/parent::table/tbody/tr[1]/td[1]").text
-                    if FooterCount == "No items available":
-                        FooterCount = "0"
-                    else:
-                        FooterCount="No Count"
-
             print("FooterCount is " + FooterCount)
             ElementFound = FooterCount
-            if ElementExpected == ElementFound:
+            if Count == ElementFound:
                 TestResult.append(
-                    ElementVerify + " (" + ElementExpected + ") " + " at " + PageName + " was matching with number of records" + " (" + ElementFound + ")")
+                    ElementVerify + " (" + Count + ") " + " at " + PageName + " was matching with number of records" + " (" + ElementFound + ")")
                 TestResultStatus.append("Pass")
             else:
                 TestResult.append(
-                    ElementVerify + " (" + ElementExpected + ") " + " at " + PageName + "was not matching with number of "
+                    ElementVerify + " (" + Count + ") " + " at " + PageName + "was not matching with number of "
                                                                                         "records" + " (" +
                     ElementFound + ")")
                 TestResultStatus.append("Fail")
 
-            # -------------------Pending Inspections Count------------------------------
-            driver.find_element(By.XPATH, "//button[contains(text(),'Pending Inspections')]").click()
-            LoaderCls.LoaderMeth(driver)
+            # -------------------Pending Inspections Button------------------------------
+            ElementVerify = "Pending Inspections Button"
+            PageName = "Home"
+            MdataSheetTab = "test_Smoke_Home_Admin"
+            MdataSheetItem = "PendingInspectionsButton"
+            MdataSheetItem2 = "PendingInspectionsButtonText"
+            ElementExpected = "Inspections"
+            ElementActionCls.ElementActionMeth(driver, MdataSheetTab, MdataSheetItem, MdataSheetItem2, ElementExpected,
+                                               ElementVerify,
+                                               PageName, TestResult, TestResultStatus)
+            SafeToClick = SafeToElementActionCls.SafeToElementActionMeth(driver, SafeToVerify, "test_Smoke_Home_Admin",
+                                                                         "SafeToPendingInspectionsClick")
+            Count = driver.find_element(By.XPATH,
+                                        DataReadMaster.GlobalData("test_Smoke_Home_Admin", MdataSheetItem)).text
+            start = '('
+            end = ')'
+            Count = Count[Count.find(start) + len(start):Count.rfind(end)]
+            print("Count is " + Count)
+            if SafeToClick == "Yes":
+                # -------------------Pending Inspections Count------------------------------
+
+                try:
+                    print("11")
+                    FooterCount = driver.find_element(By.XPATH,
+                                                      "//span[contains(text(),'Properties With Open Work')]/parent::h2/parent::div/div/div/div/div[2]/div[2]/div/div[2]/div[2]/div/div/span[2]/strong").text
+                except:
+                    try:
+                        print("22")
+                        FooterCount = driver.find_element(By.XPATH,
+                                                          "//span[contains(text(),'Properties With Open Work')]/parent::h2/parent::div/div/div/div/div[2]/div[2]/div/div[2]/div[2]/div/div/span[3]").text
+                        start = 'of '
+                        end = ''
+                        FooterCount = FooterCount[FooterCount.find(start) + len(start):FooterCount.rfind(end)]
+                    except:
+                        try:
+                            print("333")
+                            FooterCount = driver.find_element(By.XPATH,
+                                                              "//span[contains(text(),'Properties With Open Work')]/parent::h2/parent::div/div/div/div/div[2]/div[2]/div/div[2]/div[1]/table/thead/tr/th[2]/div[contains(text(),'Inspections')]/parent::th/parent::tr/parent::thead/parent::table/tbody/tr[1]/td[1]").text
+                            if FooterCount == "No items available":
+                                FooterCount = "0"
+                            else:
+                                FooterCount = "No Count"
+                        except:
+                            print("444")
+                            FooterCount = driver.find_elements(By.XPATH,
+                                                               "//span[contains(text(),'Properties With Open Work')]/parent::h2/parent::div/div/div/div/div[2]/div[2]/div/div[2]/div[1]/table/tbody/tr")
+                            FooterCount = str(len(FooterCount))
+
+                # -------------------Home Property Click------------------------------
+                ElementVerify = "Property link text click for " + ElementVerify
+                PageName = "Home"
+                MdataSheetTab = "test_Smoke_Home_Admin"
+                MdataSheetItem = "HomePropertyClick"
+                MdataSheetItem2 = "HomePropertyClickText"
+                ElementExpected = "Property Information"
+                ElementActionCls.ElementActionMeth(driver, MdataSheetTab, MdataSheetItem, MdataSheetItem2,
+                                                   ElementExpected,
+                                                   ElementVerify,
+                                                   PageName, TestResult, TestResultStatus)
+                driver.find_element(By.XPATH, "//a/div[contains(text(),'Home')]").click()
+            else:
+                print("No Data available **************** for " + ElementVerify)
+                FooterCount="0"
+                # ---------------Matching Count for Pending Inspections ---------------
             ElementVerify = "Pending Inspections Count"
+            print("FooterCount is " + FooterCount)
+            ElementFound = FooterCount
+            if Count == ElementFound:
+                TestResult.append(
+                    ElementVerify + " (" + Count + ") " + " at " + PageName + " was matching with number of records" + " (" + ElementFound + ")")
+                TestResultStatus.append("Pass")
+            else:
+                TestResult.append(
+                    ElementVerify + " (" + Count + ") " + " at " + PageName + "was not matching with number of "
+                                                                                        "records" + " (" +
+                    ElementFound + ")")
+                TestResultStatus.append("Fail")
+            # -------------------Open Work Orders Button------------------------------
+            ElementVerify = "Open Work Orders Button"
             PageName = "Home"
             MdataSheetTab = "test_Smoke_Home_Admin"
-            MdataSheetItem = "WorkOrdersGraphCompleted"
-            Count = driver.find_element(By.XPATH, "//button[contains(text(),'Pending Inspections')]").text
+            MdataSheetItem = "OpenWorkOrdersButton"
+            MdataSheetItem2 = "OpenWorkOrdersButtonText"
+            ElementExpected = "Work Orders"
+            ElementActionCls.ElementActionMeth(driver, MdataSheetTab, MdataSheetItem, MdataSheetItem2, ElementExpected,
+                                               ElementVerify,
+                                               PageName, TestResult, TestResultStatus)
+            SafeToClick = SafeToElementActionCls.SafeToElementActionMeth(driver, SafeToVerify, "test_Smoke_Home_Admin",
+                                                                         "SafeToOpenWorkOrdersClick")
+            Count = driver.find_element(By.XPATH,
+                                        DataReadMaster.GlobalData("test_Smoke_Home_Admin", MdataSheetItem)).text
             start = '('
             end = ')'
             Count = Count[Count.find(start) + len(start):Count.rfind(end)]
             print("Count is " + Count)
-            ElementExpected = Count
-            try:
-                print("11")
-                FooterCount = driver.find_element(By.XPATH,
-                                                  "//span[contains(text(),'Properties With Open Work')]/parent::h2/parent::div/div/div/div/div[2]/div[2]/div/div[2]/div[2]/div/div/span[2]/strong").text
-            except:
-                try:
-                    print("22")
-                    FooterCount = driver.find_element(By.XPATH,
-                                                      "//span[contains(text(),'Properties With Open Work')]/parent::h2/parent::div/div/div/div/div[2]/div[2]/div/div[2]/div[2]/div/div/span[3]").text
-                    start = 'of '
-                    end = ''
-                    FooterCount = FooterCount[FooterCount.find(start) + len(start):FooterCount.rfind(end)]
-                except:
-                    print("333")
-                    FooterCount = driver.find_element(By.XPATH,
-                                                      "//span[contains(text(),'Properties With Open Work')]/parent::h2/parent::div/div/div/div/div[2]/div[2]/div/div[2]/div[1]/table/thead/tr/th[2]/div[contains(text(),'Inspections')]/parent::th/parent::tr/parent::thead/parent::table/tbody/tr[1]/td[1]").text
-                    if FooterCount == "No items available":
-                        FooterCount = "0"
-                    else:
-                        FooterCount = driver.find_elements(By.XPATH,
-                                                          "//span[contains(text(),'Properties With Open Work')]/parent::h2/parent::div/div/div/div/div[2]/div[2]/div/div[2]/div[1]/table/thead/tr/th[2]/div[contains(text(),'Inspections')]/parent::th/parent::tr/parent::thead/parent::table/tbody/tr")
-                        FooterCount=str(len(FooterCount))
+            if SafeToClick == "Yes":
+                # -------------------Open Work Orders Count------------------------------
 
+                try:
+                    print("11")
+                    FooterCount = driver.find_element(By.XPATH,
+                                                      "//span[contains(text(),'Properties With Open Work')]/parent::h2/parent::div/div/div/div/div[2]/div[2]/div/div[2]/div[2]/div/div/span[2]/strong").text
+                except:
+                    try:
+                        print("22")
+                        FooterCount = driver.find_element(By.XPATH,
+                                                          "//span[contains(text(),'Properties With Open Work')]/parent::h2/parent::div/div/div/div/div[2]/div[2]/div/div[2]/div[2]/div/div/span[3]").text
+                        start = 'of '
+                        end = ''
+                        FooterCount = FooterCount[FooterCount.find(start) + len(start):FooterCount.rfind(end)]
+                    except:
+                        try:
+                            print("333")
+                            FooterCount = driver.find_element(By.XPATH,
+                                                              "//span[contains(text(),'Properties With Open Work')]/parent::h2/parent::div/div/div/div/div[2]/div[2]/div/div[2]/div[1]/table/thead/tr/th[2]/div[contains(text(),'Inspections')]/parent::th/parent::tr/parent::thead/parent::table/tbody/tr[1]/td[1]").text
+                            if FooterCount == "No items available":
+                                FooterCount = "0"
+                            else:
+                                FooterCount = "No Count"
+                        except:
+                            print("444")
+                            FooterCount = driver.find_elements(By.XPATH,
+                                                               "//span[contains(text(),'Properties With Open Work')]/parent::h2/parent::div/div/div/div/div[2]/div[2]/div/div[2]/div[1]/table/tbody/tr")
+                            FooterCount = str(len(FooterCount))
+                # -------------------Home Property Click------------------------------
+                ElementVerify = "Property link text click for " + ElementVerify
+                PageName = "Home"
+                MdataSheetTab = "test_Smoke_Home_Admin"
+                MdataSheetItem = "HomePropertyClick"
+                MdataSheetItem2 = "HomePropertyClickText"
+                ElementExpected = "Property Information"
+                ElementActionCls.ElementActionMeth(driver, MdataSheetTab, MdataSheetItem, MdataSheetItem2,
+                                                   ElementExpected,
+                                                   ElementVerify,
+                                                   PageName, TestResult, TestResultStatus)
+                driver.find_element(By.XPATH, "//a/div[contains(text(),'Home')]").click()
+            else:
+                print("No Data available **************** for " + ElementVerify)
+                FooterCount="0"
+            # ---------------Matching Count for Open Work Orders ---------------
             print("FooterCount is " + FooterCount)
             ElementFound = FooterCount
-            if ElementExpected == ElementFound:
+            if Count == ElementFound:
                 TestResult.append(
-                    ElementVerify + " (" + ElementExpected + ") " + " at " + PageName + " was matching with number of records" + " (" + ElementFound + ")")
+                    ElementVerify + " (" + Count + ") " + " at " + PageName + " was matching with number of records" + " (" + ElementFound + ")")
                 TestResultStatus.append("Pass")
             else:
                 TestResult.append(
-                    ElementVerify + " (" + ElementExpected + ") " + " at " + PageName + "was not matching with number of "
+                    ElementVerify + " (" + Count + ") " + " at " + PageName + "was not matching with number of "
                                                                                         "records" + " (" +
                     ElementFound + ")")
                 TestResultStatus.append("Fail")
 
-            # -------------------Open Work Orders Count------------------------------
-            driver.find_element(By.XPATH, "//button[contains(text(),'Open Work Orders')]").click()
-            LoaderCls.LoaderMeth(driver)
-            ElementVerify = "Open Work Orders"
+            # --------------------Inspections Requiring Action BUTTONS------------------------
+            # -------------------Work Order Required Button------------------------------
+            ElementVerify = "Work Order Required Button"
             PageName = "Home"
             MdataSheetTab = "test_Smoke_Home_Admin"
-            MdataSheetItem = "WorkOrdersGraphCompleted"
-            Count = driver.find_element(By.XPATH, "//button[contains(text(),'Open Work Orders')]").text
+            MdataSheetItem = "WorkOrderRequiredButton"
+            MdataSheetItem2 = "WorkOrderRequiredButtonText"
+            ElementExpected = "Inspection Type"
+            ElementActionCls.ElementActionMeth(driver, MdataSheetTab, MdataSheetItem, MdataSheetItem2, ElementExpected,
+                                               ElementVerify,
+                                               PageName, TestResult, TestResultStatus)
+            SafeToClick = SafeToElementActionCls.SafeToElementActionMeth(driver, SafeToVerify, "test_Smoke_Home_Admin",
+                                                                         "SafeToWorkOrderRequiredClick")
+            Count = driver.find_element(By.XPATH,
+                                        DataReadMaster.GlobalData("test_Smoke_Home_Admin", MdataSheetItem)).text
             start = '('
             end = ')'
             Count = Count[Count.find(start) + len(start):Count.rfind(end)]
             print("Count is " + Count)
-            ElementExpected = Count
-            try:
-                print("11")
-                FooterCount = driver.find_element(By.XPATH,
-                                                  "//span[contains(text(),'Properties With Open Work')]/parent::h2/parent::div/div/div/div/div[2]/div[2]/div/div[2]/div[2]/div/div/span[2]/strong").text
-            except:
-                try:
-                    print("22")
-                    FooterCount = driver.find_element(By.XPATH,
-                                                      "//span[contains(text(),'Properties With Open Work')]/parent::h2/parent::div/div/div/div/div[2]/div[2]/div/div[2]/div[2]/div/div/span[3]").text
-                    start = 'of '
-                    end = ''
-                    FooterCount = FooterCount[FooterCount.find(start) + len(start):FooterCount.rfind(end)]
-                except:
-                    print("333")
-                    FooterCount = driver.find_element(By.XPATH,
-                                                      "//span[contains(text(),'Properties With Open Work')]/parent::h2/parent::div/div/div/div/div[2]/div[2]/div/div[2]/div[1]/table/thead/tr/th[2]/div[contains(text(),'Inspections')]/parent::th/parent::tr/parent::thead/parent::table/tbody/tr[1]/td[1]").text
-                    if FooterCount == "No items available":
-                        FooterCount = "0"
-                    else:
-                        FooterCount="No Count"
+            if SafeToClick == "Yes":
+                # -------------------Work Order Required Count------------------------------
 
+                try:
+                    print("11")
+                    FooterCount = driver.find_element(By.XPATH,
+                                                      "//span[contains(text(),'Properties With Open Work')]/parent::h2/parent::div/div/div/div/div[2]/div[2]/div/div[2]/div[2]/div/div/span[2]/strong").text
+                except:
+                    try:
+                        print("22")
+                        FooterCount = driver.find_element(By.XPATH,
+                                                          "//span[contains(text(),'Properties With Open Work')]/parent::h2/parent::div/div/div/div/div[2]/div[2]/div/div[2]/div[2]/div/div/span[3]").text
+                        start = 'of '
+                        end = ''
+                        FooterCount = FooterCount[FooterCount.find(start) + len(start):FooterCount.rfind(end)]
+                    except:
+                        try:
+                            print("333")
+                            FooterCount = driver.find_element(By.XPATH,
+                                                              "//span[contains(text(),'Properties With Open Work')]/parent::h2/parent::div/div/div/div/div[2]/div[2]/div/div[2]/div[1]/table/thead/tr/th[2]/div[contains(text(),'Inspections')]/parent::th/parent::tr/parent::thead/parent::table/tbody/tr[1]/td[1]").text
+                            if FooterCount == "No items available":
+                                FooterCount = "0"
+                            else:
+                                FooterCount = "No Count"
+                        except:
+                            print("444")
+                            FooterCount = driver.find_elements(By.XPATH,
+                                                               "//span[contains(text(),'Properties With Open Work')]/parent::h2/parent::div/div/div/div/div[2]/div[2]/div/div[2]/div[1]/table/tbody/tr")
+                            FooterCount = str(len(FooterCount))
+                # -------------------Home Inspection Click------------------------------
+                ElementVerify = "Inspection link text click for " + ElementVerify
+                PageName = "Home"
+                MdataSheetTab = "test_Smoke_Home_Admin"
+                MdataSheetItem = "HomeInspectionClick"
+                MdataSheetItem2 = "HomeInspectionClickText"
+                ElementExpected = "Inspection Date"
+                ElementActionCls.ElementActionMeth(driver, MdataSheetTab, MdataSheetItem, MdataSheetItem2,
+                                                   ElementExpected,
+                                                   ElementVerify,
+                                                   PageName, TestResult, TestResultStatus)
+                driver.find_element(By.XPATH, "//a/div[contains(text(),'Home')]").click()
+            else:
+                print("No Data available **************** for " + ElementVerify)
+                FooterCount="0"
+            # ---------------Matching Count for Work Order Required ---------------
             print("FooterCount is " + FooterCount)
             ElementFound = FooterCount
-            if ElementExpected == ElementFound:
+            if Count == ElementFound:
                 TestResult.append(
-                    ElementVerify + " (" + ElementExpected + ") " + " at " + PageName + "was matching with number of "
-                                                                                        "records" + " (" +
-                    ElementFound + ")")
+                    ElementVerify + " (" + Count + ") " + " at " + PageName + " was matching with number of records" + " (" + ElementFound + ")")
                 TestResultStatus.append("Pass")
             else:
-                TestResult.append(ElementVerify + " (" + ElementExpected + ") " + " at " + PageName + "was not matching with number of "
+                TestResult.append(
+                    ElementVerify + " (" + Count + ") " + " at " + PageName + "was not matching with number of "
                                                                                         "records" + " (" +
                     ElementFound + ")")
                 TestResultStatus.append("Fail")
 
-            # -------------------Work Order Required Count------------------------------
-            driver.find_element(By.XPATH, "//button[contains(text(),'Work Order Required')]").click()
-            LoaderCls.LoaderMeth(driver)
-            ElementVerify = "Work Order Required"
+            # -------------------Sign off Required Button------------------------------
+            ElementVerify = "Sign Off Required Button"
             PageName = "Home"
             MdataSheetTab = "test_Smoke_Home_Admin"
-            MdataSheetItem = "WorkOrdersGraphCompleted"
-            Count = driver.find_element(By.XPATH, "//button[contains(text(),'Work Order Required')]").text
+            MdataSheetItem = "SignOffRequiredButton"
+            MdataSheetItem2 = "SignOffRequiredButtonText"
+            ElementExpected = "Inspection Type"
+            ElementActionCls.ElementActionMeth(driver, MdataSheetTab, MdataSheetItem, MdataSheetItem2, ElementExpected,
+                                               ElementVerify,
+                                               PageName, TestResult, TestResultStatus)
+            SafeToClick = SafeToElementActionCls.SafeToElementActionMeth(driver, SafeToVerify, "test_Smoke_Home_Admin",
+                                                                         "SafeToSignOffRequiredClick")
+            Count = driver.find_element(By.XPATH,
+                                        DataReadMaster.GlobalData("test_Smoke_Home_Admin", MdataSheetItem)).text
             start = '('
             end = ')'
             Count = Count[Count.find(start) + len(start):Count.rfind(end)]
             print("Count is " + Count)
-            ElementExpected = Count
-            try:
-                print("11")
-                FooterCount = driver.find_element(By.XPATH,
-                                                  "//span[contains(text(),'Inspections Requiring Action')]/parent::h2/parent::div/div/div/div/div[2]/div[2]/div/div[2]/div[2]/div/div/span[2]/strong").text
-            except:
-                try:
-                    print("22")
-                    FooterCount = driver.find_element(By.XPATH,
-                                                      "//span[contains(text(),'Inspections Requiring Action')]/parent::h2/parent::div/div/div/div/div[2]/div[2]/div/div[2]/div[2]/div/div/span[3]").text
-                    start = 'of '
-                    end = ''
-                    FooterCount = FooterCount[FooterCount.find(start) + len(start):FooterCount.rfind(end)]
-                except:
-                    print("333")
-                    FooterCount = driver.find_element(By.XPATH,
-                                                      "//span[contains(text(),'Inspections Requiring Action')]/parent::h2/parent::div/div/div/div/div[2]/div[2]/div/div[2]/div[1]/table/thead/tr/th[2]/div[contains(text(),'Inspection Type')]/parent::th/parent::tr/parent::thead/parent::table/tbody/tr[1]/td[1]").text
-                    if FooterCount == "No items available":
-                        FooterCount = "0"
-                    else:
-                        FooterCount="No Count"
+            if SafeToClick == "Yes":
+                # -------------------Sign Off Required Count------------------------------
 
+                try:
+                    print("11")
+                    FooterCount = driver.find_element(By.XPATH,
+                                                      "//span[contains(text(),'Properties With Open Work')]/parent::h2/parent::div/div/div/div/div[2]/div[2]/div/div[2]/div[2]/div/div/span[2]/strong").text
+                except:
+                    try:
+                        print("22")
+                        FooterCount = driver.find_element(By.XPATH,
+                                                          "//span[contains(text(),'Properties With Open Work')]/parent::h2/parent::div/div/div/div/div[2]/div[2]/div/div[2]/div[2]/div/div/span[3]").text
+                        start = 'of '
+                        end = ''
+                        FooterCount = FooterCount[FooterCount.find(start) + len(start):FooterCount.rfind(end)]
+                    except:
+                        try:
+                            print("333")
+                            FooterCount = driver.find_element(By.XPATH,
+                                                              "//span[contains(text(),'Properties With Open Work')]/parent::h2/parent::div/div/div/div/div[2]/div[2]/div/div[2]/div[1]/table/thead/tr/th[2]/div[contains(text(),'Inspections')]/parent::th/parent::tr/parent::thead/parent::table/tbody/tr[1]/td[1]").text
+                            if FooterCount == "No items available":
+                                FooterCount = "0"
+                            else:
+                                FooterCount = "No Count"
+                        except:
+                            print("444")
+                            FooterCount = driver.find_elements(By.XPATH,
+                                                               "//span[contains(text(),'Properties With Open Work')]/parent::h2/parent::div/div/div/div/div[2]/div[2]/div/div[2]/div[1]/table/tbody/tr")
+                            FooterCount = str(len(FooterCount))
+                # -------------------Home Inspection Click------------------------------
+                ElementVerify = "Inspection link text click for " + ElementVerify
+                PageName = "Home"
+                MdataSheetTab = "test_Smoke_Home_Admin"
+                MdataSheetItem = "HomeInspectionClick"
+                MdataSheetItem2 = "HomeInspectionClickText"
+                ElementExpected = "Inspection Date"
+                ElementActionCls.ElementActionMeth(driver, MdataSheetTab, MdataSheetItem, MdataSheetItem2,
+                                                   ElementExpected,
+                                                   ElementVerify,
+                                                   PageName, TestResult, TestResultStatus)
+                driver.find_element(By.XPATH, "//a/div[contains(text(),'Home')]").click()
+            else:
+                print("No Data available **************** for " + ElementVerify)
+                FooterCount="0"
+            # ---------------Matching Count for Sign Off Required ---------------
             print("FooterCount is " + FooterCount)
             ElementFound = FooterCount
-            if ElementExpected == ElementFound:
+            if Count == ElementFound:
                 TestResult.append(
-                    ElementVerify + " (" + ElementExpected + ") " + " at " + PageName + "was matching with number of "
-                                                                                        "records" + " (" +
-                    ElementFound + ")")
+                    ElementVerify + " (" + Count + ") " + " at " + PageName + " was matching with number of records" + " (" + ElementFound + ")")
                 TestResultStatus.append("Pass")
             else:
                 TestResult.append(
-                    ElementVerify + " (" + ElementExpected + ") " + " at " + PageName + "was not matching with number of "
+                    ElementVerify + " (" + Count + ") " + " at " + PageName + "was not matching with number of "
                                                                                         "records" + " (" +
                     ElementFound + ")")
                 TestResultStatus.append("Fail")
 
-            # -------------------Sign-off Required Count------------------------------
-            driver.find_element(By.XPATH, "//button[contains(text(),'Sign-off Required')]").click()
-            LoaderCls.LoaderMeth(driver)
-            ElementVerify = "Sign-off Required"
+            # -------------------Finalization Required Button------------------------------
+            ElementVerify = "Finalization Required Button"
             PageName = "Home"
             MdataSheetTab = "test_Smoke_Home_Admin"
-            MdataSheetItem = "WorkOrdersGraphCompleted"
-            Count = driver.find_element(By.XPATH, "//button[contains(text(),'Sign-off Required')]").text
+            MdataSheetItem = "FinalizationRequiredButton"
+            MdataSheetItem2 = "FinalizationRequiredButtonText"
+            ElementExpected = "Inspection Type"
+            ElementActionCls.ElementActionMeth(driver, MdataSheetTab, MdataSheetItem, MdataSheetItem2, ElementExpected,
+                                               ElementVerify,
+                                               PageName, TestResult, TestResultStatus)
+            SafeToClick = SafeToElementActionCls.SafeToElementActionMeth(driver, SafeToVerify, "test_Smoke_Home_Admin",
+                                                                         "SafeToFinalizationRequiredClick")
+            Count = driver.find_element(By.XPATH,
+                                        DataReadMaster.GlobalData("test_Smoke_Home_Admin", MdataSheetItem)).text
             start = '('
             end = ')'
             Count = Count[Count.find(start) + len(start):Count.rfind(end)]
             print("Count is " + Count)
-            ElementExpected = Count
-            try:
-                print("11")
-                FooterCount = driver.find_element(By.XPATH,
-                                                  "//span[contains(text(),'Inspections Requiring Action')]/parent::h2/parent::div/div/div/div/div[2]/div[2]/div/div[2]/div[2]/div/div/span[2]/strong").text
-            except:
-                try:
-                    print("22")
-                    FooterCount = driver.find_element(By.XPATH,
-                                                      "//span[contains(text(),'Inspections Requiring Action')]/parent::h2/parent::div/div/div/div/div[2]/div[2]/div/div[2]/div[2]/div/div/span[3]").text
-                    start = 'of '
-                    end = ''
-                    FooterCount = FooterCount[FooterCount.find(start) + len(start):FooterCount.rfind(end)]
-                except:
-                    print("333")
-                    FooterCount = driver.find_element(By.XPATH,
-                                                      "//span[contains(text(),'Inspections Requiring Action')]/parent::h2/parent::div/div/div/div/div[2]/div[2]/div/div[2]/div[1]/table/thead/tr/th[2]/div[contains(text(),'Inspection Type')]/parent::th/parent::tr/parent::thead/parent::table/tbody/tr[1]/td[1]").text
-                    if FooterCount == "No items available":
-                        FooterCount = "0"
-                    else:
-                        FooterCount = "No Count"
+            if SafeToClick=="Yes":
+                # -------------------Finalization Required Count------------------------------
 
+                try:
+                    print("11")
+                    FooterCount = driver.find_element(By.XPATH,
+                                                      "//span[contains(text(),'Properties With Open Work')]/parent::h2/parent::div/div/div/div/div[2]/div[2]/div/div[2]/div[2]/div/div/span[2]/strong").text
+                except:
+                    try:
+                        print("22")
+                        FooterCount = driver.find_element(By.XPATH,
+                                                          "//span[contains(text(),'Properties With Open Work')]/parent::h2/parent::div/div/div/div/div[2]/div[2]/div/div[2]/div[2]/div/div/span[3]").text
+                        start = 'of '
+                        end = ''
+                        FooterCount = FooterCount[FooterCount.find(start) + len(start):FooterCount.rfind(end)]
+                    except:
+                        try:
+                            print("333")
+                            FooterCount = driver.find_element(By.XPATH,
+                                                              "//span[contains(text(),'Properties With Open Work')]/parent::h2/parent::div/div/div/div/div[2]/div[2]/div/div[2]/div[1]/table/thead/tr/th[2]/div[contains(text(),'Inspections')]/parent::th/parent::tr/parent::thead/parent::table/tbody/tr[1]/td[1]").text
+                            if FooterCount == "No items available":
+                                FooterCount = "0"
+                            else:
+                                FooterCount = "No Count"
+                        except:
+                            print("444")
+                            FooterCount = driver.find_elements(By.XPATH,
+                                                               "//span[contains(text(),'Properties With Open Work')]/parent::h2/parent::div/div/div/div/div[2]/div[2]/div/div[2]/div[1]/table/tbody/tr")
+                            FooterCount = str(len(FooterCount))
+                # -------------------Home Inspection Click------------------------------
+                ElementVerify = "Inspection link text click for " + ElementVerify
+                PageName = "Home"
+                MdataSheetTab = "test_Smoke_Home_Admin"
+                MdataSheetItem = "HomeInspectionClick"
+                MdataSheetItem2 = "HomeInspectionClickText"
+                ElementExpected = "Inspection Date"
+                ElementActionCls.ElementActionMeth(driver, MdataSheetTab, MdataSheetItem, MdataSheetItem2,
+                                                   ElementExpected,
+                                                   ElementVerify,
+                                                   PageName, TestResult, TestResultStatus)
+                driver.find_element(By.XPATH, "//a/div[contains(text(),'Home')]").click()
+                LoaderCls.LoaderMeth(driver)
+            else:
+                print("No Data available **************** for " + ElementVerify)
+                FooterCount="0"
+            # ---------------Matching Count for Finalization Required ---------------
             print("FooterCount is " + FooterCount)
             ElementFound = FooterCount
-            if ElementExpected == ElementFound:
+            if Count == ElementFound:
                 TestResult.append(
-                    ElementVerify + " (" + ElementExpected + ") " + " at " + PageName + "was matching with number of "
-                                                                                        "records" + " (" +
-                    ElementFound + ")")
+                    ElementVerify + " (" + Count + ") " + " at " + PageName + " was matching with number of records" + " (" + ElementFound + ")")
                 TestResultStatus.append("Pass")
             else:
                 TestResult.append(
-                    ElementVerify + " (" + ElementExpected + ") " + " at " + PageName + "was not matching with number of "
+                    ElementVerify + " (" + Count + ") " + " at " + PageName + "was not matching with number of "
                                                                                         "records" + " (" +
                     ElementFound + ")")
                 TestResultStatus.append("Fail")
 
-            # -------------------Finalization Required Count------------------------------
-            driver.find_element(By.XPATH, "//button[contains(text(),'Finalization Required')]").click()
-            LoaderCls.LoaderMeth(driver)
-            ElementVerify = "Finalization Required"
-            PageName = "Home"
-            MdataSheetTab = "test_Smoke_Home_Admin"
-            MdataSheetItem = "WorkOrdersGraphCompleted"
-            Count = driver.find_element(By.XPATH, "//button[contains(text(),'Finalization Required')]").text
-            start = '('
-            end = ')'
-            Count = Count[Count.find(start) + len(start):Count.rfind(end)]
-            print("Count is " + Count)
-            ElementExpected = Count
-            try:
-                print("11")
-                FooterCount = driver.find_element(By.XPATH,
-                                                  "//span[contains(text(),'Inspections Requiring Action')]/parent::h2/parent::div/div/div/div/div[2]/div[2]/div/div[2]/div[2]/div/div/span[2]/strong").text
-            except:
-                try:
-                    print("22")
-                    FooterCount = driver.find_element(By.XPATH,
-                                                      "//span[contains(text(),'Inspections Requiring Action')]/parent::h2/parent::div/div/div/div/div[2]/div[2]/div/div[2]/div[2]/div/div/span[3]").text
-                    start = 'of '
-                    end = ''
-                    FooterCount = FooterCount[FooterCount.find(start) + len(start):FooterCount.rfind(end)]
-                except:
-                    print("333")
-                    FooterCount = driver.find_element(By.XPATH,
-                                                      "//span[contains(text(),'Inspections Requiring Action')]/parent::h2/parent::div/div/div/div/div[2]/div[2]/div/div[2]/div[1]/table/thead/tr/th[2]/div[contains(text(),'Inspection Type')]/parent::th/parent::tr/parent::thead/parent::table/tbody/tr[1]/td[1]").text
-                    if FooterCount == "No items available":
-                        FooterCount = "0"
-                    else:
-                        FooterCount = "No Count"
-
-            print("FooterCount is " + FooterCount)
-            ElementFound = FooterCount
-            if ElementExpected == ElementFound:
-                TestResult.append(
-                    ElementVerify + " (" + ElementExpected + ") " + " at " + PageName + "was matching with number of "
-                                                                                        "records" + " (" +
-                    ElementFound + ")")
-                TestResultStatus.append("Pass")
-            else:
-                TestResult.append(
-                    ElementVerify + " (" + ElementExpected + ") " + " at " + PageName + "was not matching with number of "
-                                                                                        "records" + " (" +
-                    ElementFound + ")")
-                TestResultStatus.append("Fail")
-
+            #driver.find_element(By.XPATH, "//a/div[contains(text(),'Home')]").click()
 
         except Exception as Mainerror:
             print(Mainerror)

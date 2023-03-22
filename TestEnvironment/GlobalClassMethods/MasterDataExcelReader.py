@@ -23,3 +23,15 @@ class DataReadMaster:
             else:
                 if sheetx.cell(ix, 1).value == FieldName:
                     return sheetx.cell(ix, 2).value
+
+    @classmethod
+    def GlobalDataForm(cls, Sheetname, FieldName):
+        sheetx = DataReadMaster.wbx[Sheetname]
+        for ix in range(1, 200):
+            if sheetx.cell(ix, 1).value == None:
+                break
+            else:
+                if sheetx.cell(ix, 1).value == FieldName:
+                    ColB=sheetx.cell(ix, 2).value
+                    ColC=sheetx.cell(ix, 3).value
+                    return ColB,ColC

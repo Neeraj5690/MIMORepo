@@ -1,4 +1,3 @@
-import pytest
 from selenium.webdriver.common.by import By
 from TestEnvironment.GlobalClassMethods.MasterDataExcelReader import DataReadMaster
 
@@ -9,7 +8,6 @@ class ElementPresentCls:
             ElementFound = driver.find_element(By.XPATH,
                                                    DataReadMaster.GlobalData(MdataSheetTab,
                                                                              MdataSheetItem)).text
-
             assert ElementExpected in ElementFound, ElementVerify + " at " + PageName + " not found"
             TestResult.append(ElementVerify + " at " + PageName + " was present")
             TestResultStatus.append("Pass")

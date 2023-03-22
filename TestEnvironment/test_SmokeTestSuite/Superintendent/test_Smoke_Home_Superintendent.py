@@ -310,9 +310,9 @@ def test_AllModules(test_setup):
                 ElementVerify = "************ for " + ElementVerify
                 PageName = "Home"
                 MdataSheetTab = "test_Smoke_Home_Superintendent"
-                MdataSheetItem = "*******Click"
-                MdataSheetItem2 = "*******ClickText"
-                ElementExpected = "*********"
+                MdataSheetItem = "OpenWorkOrdersInspectionIDClick"
+                MdataSheetItem2 = "OpenWorkOrdersInspectionIDClickText"
+                ElementExpected = "Inspection Details"
                 ElementActionClsNewTab.ElementActionMethNewTab(driver, MdataSheetTab, MdataSheetItem,
                                                                MdataSheetItem2,
                                                                ElementExpected,
@@ -401,5 +401,3 @@ def test_AllModules(test_setup):
                 sheet.cell(row=i, column=5).value = "Skipped"
                 wb.save(loc)
         # ----------------------------------------------------------------------------
-# if __name__=='__main__':
-#     test_setup()
